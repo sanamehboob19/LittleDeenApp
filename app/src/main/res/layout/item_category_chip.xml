@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardChip"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/_36sdp"
+    android:layout_marginEnd="@dimen/_6sdp"
+    android:layout_marginVertical="@dimen/_4sdp"
+    app:cardBackgroundColor="@color/color_surface"
+    app:cardCornerRadius="@dimen/_18sdp"
+    app:cardElevation="@dimen/_1sdp"
+    app:strokeColor="@color/color_border"
+    app:strokeWidth="@dimen/_1sdp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/_12sdp">
+
+        <!-- Emoji Icon -->
+        <TextView
+            android:id="@+id/tvChipEmoji"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_13ssp"
+            tools:text="🕌" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tvChipTitle"
+            style="@style/TextAppearance.LittleDeen.H5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:textColor="@color/color_text_primary"
+            android:textSize="@dimen/_11ssp"
+            tools:text="Islamic Cartoons" />
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

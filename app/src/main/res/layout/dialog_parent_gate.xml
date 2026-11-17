@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    app:cardBackgroundColor="@color/color_surface"
+    app:cardCornerRadius="@dimen/_24sdp"
+    app:cardElevation="@dimen/_10sdp"
+    app:strokeColor="@color/color_border"
+    app:strokeWidth="@dimen/_1sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/_16sdp"
+        android:paddingTop="@dimen/_14sdp"
+        android:paddingBottom="@dimen/_16sdp">
+
+        <!-- Top Header: Shield + Close Cross -->
+        <LinearLayout
+            android:id="@+id/layoutTopHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardShieldIcon"
+                android:layout_width="@dimen/_36sdp"
+                android:layout_height="@dimen/_36sdp"
+                app:cardBackgroundColor="#E8F5E9"
+                app:cardCornerRadius="@dimen/_18sdp"
+                app:cardElevation="0dp"
+                app:strokeColor="#C8E6C9"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="🔒"
+                    android:textSize="@dimen/_16ssp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextAppearance.LittleDeen.H3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Parental Gate"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="@dimen/_15ssp" />
+
+                <TextView
+                    style="@style/TextAppearance.LittleDeen.P5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Adult verification to access settings"
+                    android:textColor="@color/color_text_secondary"
+                    android:textSize="@dimen/_9ssp" />
+            </LinearLayout>
+
+            <!-- Close Dialog -->
+            <ImageView
+                android:id="@+id/ivCloseGate"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Close"
+                android:padding="@dimen/_6sdp"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                app:tint="@color/color_text_tertiary" />
+        </LinearLayout>
+
+        <!-- CHALLENGE CARD (Mathematical Question) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardChallengeBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            app:cardBackgroundColor="#F8F9FA"
+            app:cardCornerRadius="@dimen/_16sdp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/color_border"
+            app:strokeWidth="@dimen/_1sdp"
+            app:layout_constraintTop_toBottomOf="@id/layoutTopHeader">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/_10sdp">
+
+                <TextView
+                    style="@style/TextAppearance.LittleDeen.P5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ask a parent to solve:"
+                    android:textColor="@color/color_text_secondary"
+                    android:textSize="@dimen/_10ssp" />
+
+                <!-- Math equation -->
+                <TextView
+                    android:id="@+id/tvMathEquation"
+                    style="@style/TextAppearance.LittleDeen.H2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:textColor="@color/color_primary"
+                    android:textSize="@dimen/_22ssp"
+                    android:textStyle="bold"
+                    tools:text="48 + 37 = ?" />
+
+                <!-- Word equivalent -->
+                <TextView
+                    android:id="@+id/tvEquationInWords"
+                    style="@style/TextAppearance.LittleDeen.P5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:textColor="@color/color_text_secondary"
+                    android:textSize="@dimen/_9ssp"
+                    tools:text="(Forty-eight + Thirty-seven)" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ANSWER INPUT DISPLAY -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardInputDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_42sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:cardBackgroundColor="@color/color_surface"
+            app:cardCornerRadius="@dimen/_12sdp"
+            app:cardElevation="@dimen/_1sdp"
+            app:strokeColor="@color/color_primary"
+            app:strokeWidth="@dimen/_1sdp"
+            app:layout_constraintTop_toBottomOf="@id/cardChallengeBox">
+
+            <TextView
+                android:id="@+id/tvEnteredAnswer"
+                style="@style/TextAppearance.LittleDeen.H3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:hint="Type answer here..."
+                android:textColor="@color/color_text_primary"
+                android:textColorHint="@color/color_text_tertiary"
+                android:textSize="@dimen/_18ssp"
+                android:textStyle="bold" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 4x3 FULL NUMPAD (0-9 + Backspace + Verify) -->
+        <LinearLayout
+            android:id="@+id/layoutNumpad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/cardInputDisplay">
+
+            <!-- Row 1: 1, 2, 3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn1"
+                    style="@style/TextAppearance.LittleDeen.H4"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#F5F5F5"
+                    android:text="1"
+                    android:textColor="@color/color_text_primary"
+                    app:cornerRadius="@dimen/_10sdp"
+                    app:elevation="0dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn2"
+                    style="@style/TextAppearance.LittleDeen.H4"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#F5F5F5"
+                    android:text="2"
+                    android:textColor="@color/color_text_primary"
+                    app:cornerRadius="@dimen/_10sdp"
+                    app:elevation="0dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn3"
+                    style="@style/TextAppearance.LittleDeen.H4"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#F5F5F5"
+                    android:text="3"
+                    android:textColor="@color/color_text_primary"
+                    app:cornerRadius="@dimen/_10sdp"
+                    app:elevation="0dp" />
+            </LinearLayout>
+
+            <!-- Row 2: 4, 5, 6 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn4"
+                    style="@style/TextAppearance.LittleDeen.H4"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#F5F5F5"
+                    android:text="4"
+                    android:textColor="@color/color_text_primary"
+                    app:cornerRadius="@dimen/_10sdp"
+                    app:elevation="0dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn5"
+                    style="@style/TextAppearance.LittleDeen.H4"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#F5F5F5"
+                    android:text="5"
+                    android:textColor="@color/color_text_primary"
+                    app:cornerRadius="@dimen/_10sdp"
+                    app:elevation="0dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn6"
+                    style="@style/TextAppearance.LittleDeen.H4"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#F5F5F5"
+                    android:text="6"
+                    android:textColor="@color/color_text_primary"
+                    app:cornerRadius="@dimen/_10sdp"
+                    app:elevation="0dp" />
+            </LinearLayout>
+
+            <!-- Row 3: 7, 8, 9 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn7"
+                    style="@style/TextAppearance.LittleDeen.H4"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#F5F5F5"
+                    android:text="7"
+                    android:textColor="@color/color_text_primary"
+                    app:cornerRadius="@dimen/_10sdp"
+                    app:elevation="0dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn8"
+                    style="@style/TextAppearance.LittleDeen.H4"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#F5F5F5"
+                    android:text="8"
+                    android:textColor="@color/color_text_primary"
+                    app:cornerRadius="@dimen/_10sdp"
+                    app:elevation="0dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn9"
+                    style="@style/TextAppearance.LittleDeen.H4"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#F5F5F5"
+                    android:text="9"
+                    android:textColor="@color/color_text_primary"
+                    app:cornerRadius="@dimen/_10sdp"
+                    app:elevation="0dp" />
+            </LinearLayout>
+
+            <!-- Row 4: Backspace (⌫), 0, Submit (✔) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Backspace -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnBackspace"
+                    style="@style/TextAppearance.LittleDeen.H4"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FFEBEE"
+                    android:text="⌫"
+                    android:textColor="#D32F2F"
+                    app:cornerRadius="@dimen/_10sdp"
+                    app:elevation="0dp" />
+
+                <!-- 0 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn0"
+                    style="@style/TextAppearance.LittleDeen.H4"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#F5F5F5"
+                    android:text="0"
+                    android:textColor="@color/color_text_primary"
+                    app:cornerRadius="@dimen/_10sdp"
+                    app:elevation="0dp" />
+
+                <!-- Verify / Submit Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSubmit"
+                    style="@style/TextAppearance.LittleDeen.H4"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/color_primary"
+                    android:text="✔"
+                    android:textColor="@color/white"
+                    app:cornerRadius="@dimen/_10sdp"
+                    app:elevation="@dimen/_2sdp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

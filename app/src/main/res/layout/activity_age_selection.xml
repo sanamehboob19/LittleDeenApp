@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg_app">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <!-- Top Audio Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardAudioToggle"
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_marginTop="@dimen/_14sdp"
+            app:cardBackgroundColor="@color/color_surface"
+            app:cardCornerRadius="@dimen/_19sdp"
+            app:cardElevation="@dimen/_3sdp"
+            app:strokeColor="@color/color_primary_light"
+            app:strokeWidth="@dimen/_1sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivAudioToggle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Toggle Audio"
+                android:padding="@dimen/_8sdp"
+                android:src="@drawable/ic_volume_up"
+                app:tint="@color/color_primary" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tvTitle"
+            style="@style/TextAppearance.LittleDeen.H2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:gravity="center"
+            android:text="@string/age_group_title"
+            android:textColor="@color/color_primary"
+            android:textSize="@dimen/_24ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardAudioToggle" />
+
+        <!-- Subtitle -->
+        <TextView
+            android:id="@+id/tvSubtitle"
+            style="@style/TextAppearance.LittleDeen.P4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:gravity="center"
+            android:text="@string/age_group_subtitle"
+            android:textColor="@color/color_text_secondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+        <!-- Cards Container -->
+        <LinearLayout
+            android:id="@+id/llAgeCards"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:layout_marginHorizontal="@dimen/_3sdp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/btnContinue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSubtitle">
+
+            <!-- CARD 1: 2 - 5 Years -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAgeOption1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_72sdp"
+                android:layout_marginBottom="@dimen/_14sdp"
+                app:cardBackgroundColor="@color/color_surface"
+                app:cardCornerRadius="@dimen/_18sdp"
+                app:cardElevation="@dimen/_2sdp"
+                app:strokeColor="@color/color_border"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="@dimen/_16sdp">
+
+                    <ImageView
+                        android:id="@+id/ivBadge1"
+                        android:layout_width="@dimen/_48sdp"
+                        android:layout_height="@dimen/_48sdp"
+                        android:contentDescription="@null"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_14sdp"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/ivCheck1"
+                        app:layout_constraintStart_toEndOf="@id/ivBadge1"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/tvAgeRange1"
+                            style="@style/TextAppearance.LittleDeen.H4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/age_option_1_range"
+                            android:textColor="@color/color_primary"
+                            android:textSize="@dimen/_15ssp" />
+
+                        <TextView
+                            style="@style/TextAppearance.LittleDeen.P5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:text="@string/age_option_1_desc"
+                            android:textColor="@color/color_text_secondary" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/ivCheck1"
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:contentDescription="Selected"
+                        android:src="@drawable/ic_age_check_badge"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- CARD 2: 6 - 8 Years (Default Selected) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAgeOption2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_72sdp"
+                android:layout_marginBottom="@dimen/_14sdp"
+                app:cardBackgroundColor="@color/color_primary_light"
+                app:cardCornerRadius="@dimen/_18sdp"
+                app:cardElevation="@dimen/_4sdp"
+                app:strokeColor="@color/color_primary"
+                app:strokeWidth="@dimen/_2sdp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="@dimen/_16sdp">
+
+                    <ImageView
+                        android:id="@+id/ivBadge2"
+                        android:layout_width="@dimen/_48sdp"
+                        android:layout_height="@dimen/_48sdp"
+                        android:contentDescription="@null"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_14sdp"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/ivCheck2"
+                        app:layout_constraintStart_toEndOf="@id/ivBadge2"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/tvAgeRange2"
+                            style="@style/TextAppearance.LittleDeen.H4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/age_option_2_range"
+                            android:textColor="@color/color_primary"
+                            android:textSize="@dimen/_15ssp" />
+
+                        <TextView
+                            style="@style/TextAppearance.LittleDeen.P5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:text="@string/age_option_2_desc"
+                            android:textColor="@color/color_text_secondary" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/ivCheck2"
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:contentDescription="Selected"
+                        android:src="@drawable/ic_age_check_badge"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- CARD 3: 9 - 12 Years -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAgeOption3"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_72sdp"
+                app:cardBackgroundColor="@color/color_surface"
+                app:cardCornerRadius="@dimen/_18sdp"
+                app:cardElevation="@dimen/_2sdp"
+                app:strokeColor="@color/color_border"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="@dimen/_16sdp">
+
+                    <ImageView
+                        android:id="@+id/ivBadge3"
+                        android:layout_width="@dimen/_48sdp"
+                        android:layout_height="@dimen/_48sdp"
+                        android:contentDescription="@null"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_14sdp"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/ivCheck3"
+                        app:layout_constraintStart_toEndOf="@id/ivBadge3"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/tvAgeRange3"
+                            style="@style/TextAppearance.LittleDeen.H4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/age_option_3_range"
+                            android:textColor="@color/color_primary"
+                            android:textSize="@dimen/_15ssp" />
+
+                        <TextView
+                            style="@style/TextAppearance.LittleDeen.P5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:text="@string/age_option_3_desc"
+                            android:textColor="@color/color_text_secondary" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/ivCheck3"
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:contentDescription="Selected"
+                        android:src="@drawable/ic_age_check_badge"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <!-- Continue Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnContinue"
+            style="@style/TextAppearance.LittleDeen.H4"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:backgroundTint="@color/color_primary"
+            android:text="@string/btn_continue"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:cornerRadius="@dimen/_16sdp"
+            app:elevation="@dimen/_4sdp"
+            app:rippleColor="#33FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

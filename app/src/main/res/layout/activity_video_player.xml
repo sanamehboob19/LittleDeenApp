@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootVideoPlayer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg_app">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/_14sdp"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_8sdp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Back Button -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/_34sdp"
+            android:layout_height="@dimen/_34sdp"
+            app:cardBackgroundColor="@color/color_surface"
+            app:cardCornerRadius="@dimen/_17sdp"
+            app:cardElevation="@dimen/_1sdp"
+            app:strokeColor="@color/color_border"
+            app:strokeWidth="@dimen/_1sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="Back"
+                android:padding="@dimen/_8sdp"
+                android:rotation="180"
+                android:src="@drawable/ic_check"
+                app:tint="@color/color_text_primary" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Screen Title / Brand -->
+        <TextView
+            android:id="@+id/tvHeaderTitle"
+            style="@style/TextAppearance.LittleDeen.H3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Little Deen Kids"
+            android:textColor="@color/color_primary"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- ============================================== -->
+    <!-- 2. OFFICIAL YOUTUBE PLAYER VIEW (16:9)         -->
+    <!-- ============================================== -->
+    <FrameLayout
+        android:id="@+id/playerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/headerBar">
+
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/youtubePlayerView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_260sdp"
+            app:enableAutomaticInitialization="false" />
+    </FrameLayout>
+
+    <!-- ============================================== -->
+    <!-- 3. SCROLLABLE DETAILS & SUGGESTED VIDEOS       -->
+    <!-- ============================================== -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/playerContainer">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/_14sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_30sdp">
+
+            <!-- Video Title -->
+            <TextView
+                android:id="@+id/tvDetailTitle"
+                style="@style/TextAppearance.LittleDeen.H3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_text_primary"
+                android:textSize="@dimen/_14ssp"
+                tools:text="Prophet Yunus (AS) &amp; The Giant Whale - Islamic Cartoon for Kids" />
+
+            <!-- Channel Name & Verified Star -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvDetailChannel"
+                    style="@style/TextAppearance.LittleDeen.P5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_text_secondary"
+                    android:textSize="@dimen/_10ssp"
+                    tools:text="One 4 Kids (Zaky)" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:text="✓"
+                    android:textColor="#2E7D32"
+                    android:textSize="@dimen/_10ssp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- ============================================== -->
+            <!-- ACTION BUTTONS SECTION (Clean & Spacious Layout) -->
+            <!-- ============================================== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:orientation="vertical">
+
+                <!-- Row 1: Primary Actions (Save & Share) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Save / Favorite Button -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnFavorite"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_38sdp"
+                        android:layout_marginEnd="@dimen/_4sdp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/color_surface"
+                        app:cardCornerRadius="@dimen/_19sdp"
+                        app:cardElevation="@dimen/_1sdp"
+                        app:strokeColor="@color/color_border"
+                        app:strokeWidth="@dimen/_1sdp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="@dimen/_12sdp">
+
+                            <TextView
+                                android:id="@+id/tvFavIcon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="🤍"
+                                android:textSize="@dimen/_13ssp" />
+
+                            <TextView
+                                android:id="@+id/tvFavLabel"
+                                style="@style/TextAppearance.LittleDeen.H5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_6sdp"
+                                android:text="Save Video"
+                                android:textColor="@color/color_text_primary"
+                                android:textSize="@dimen/_11ssp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Share Button -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnShare"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_38sdp"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/color_surface"
+                        app:cardCornerRadius="@dimen/_19sdp"
+                        app:cardElevation="@dimen/_1sdp"
+                        app:strokeColor="@color/color_border"
+                        app:strokeWidth="@dimen/_1sdp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="@dimen/_12sdp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="↗️"
+                                android:textSize="@dimen/_13ssp" />
+
+                            <TextView
+                                style="@style/TextAppearance.LittleDeen.H5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_6sdp"
+                                android:text="Share Video"
+                                android:textColor="@color/color_text_primary"
+                                android:textSize="@dimen/_11ssp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                <!-- Row 2: Secondary Actions (Playlist & View Channel) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:orientation="horizontal">
+
+                    <!-- 📂 Add to Playlist Button -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnAddToPlaylist"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_38sdp"
+                        android:layout_marginEnd="@dimen/_4sdp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/color_surface"
+                        app:cardCornerRadius="@dimen/_19sdp"
+                        app:cardElevation="@dimen/_1sdp"
+                        app:strokeColor="@color/color_border"
+                        app:strokeWidth="@dimen/_1sdp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="@dimen/_12sdp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="📂"
+                                android:textSize="@dimen/_13ssp" />
+
+                            <TextView
+                                style="@style/TextAppearance.LittleDeen.H5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_6sdp"
+                                android:text="Add to Playlist"
+                                android:textColor="@color/color_text_primary"
+                                android:textSize="@dimen/_11ssp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- View Channel Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnViewChannel"
+                        style="@style/TextAppearance.LittleDeen.H5"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_38sdp"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/color_primary_light"
+                        android:text="View Channel ›"
+                        android:textAllCaps="false"
+                        android:textColor="@color/color_primary"
+                        android:textSize="@dimen/_11ssp"
+                        app:cornerRadius="@dimen/_19sdp"
+                        app:elevation="0dp"
+                        app:strokeColor="@color/color_primary"
+                        app:strokeWidth="@dimen/_1sdp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginVertical="@dimen/_14sdp"
+                android:background="@color/color_border" />
+
+            <!-- Category Tag -->
+            <TextView
+                android:id="@+id/tvCategoryLabel"
+                style="@style/TextAppearance.LittleDeen.P5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category: Islamic Cartoons"
+                android:textColor="@color/color_text_secondary"
+                android:textSize="@dimen/_10ssp" />
+
+            <!-- Suggested Videos Section Header -->
+            <TextView
+                style="@style/TextAppearance.LittleDeen.H3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="Suggested Videos"
+                android:textColor="@color/color_text_primary"
+                android:textSize="@dimen/_14ssp" />
+
+            <!-- Suggested Videos RecyclerView -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSuggestedVideos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Fullscreen Video Container -->
+    <FrameLayout
+        android:id="@+id/fullscreenViewContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

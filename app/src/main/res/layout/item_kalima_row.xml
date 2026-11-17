@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardKalimaRow"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_12sdp"
+    app:cardBackgroundColor="@color/color_surface"
+    app:cardCornerRadius="@dimen/_24sdp"
+    app:cardElevation="@dimen/_3sdp"
+    app:strokeColor="@color/color_border"
+    app:strokeWidth="@dimen/_1sdp">
+
+    <!-- Container with background to allow for decorative blobs -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_grad_hero"
+        android:backgroundTint="@color/color_surface">
+
+        <!-- Decorative circular cut-off blob effect -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="end|top"
+            android:layout_marginTop="-30dp"
+            android:layout_marginEnd="-20dp"
+            app:cardBackgroundColor="#0D000000"
+            app:cardCornerRadius="35dp"
+            app:cardElevation="0dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/_12sdp">
+
+            <!-- Number Badge Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardBadge"
+                android:layout_width="@dimen/_48sdp"
+                android:layout_height="@dimen/_48sdp"
+                app:cardBackgroundColor="@color/color_primary_light"
+                app:cardCornerRadius="@dimen/_24sdp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/color_primary"
+                app:strokeWidth="@dimen/_2sdp">
+
+                <TextView
+                    android:id="@+id/tvKalimaNum"
+                    style="@style/TextAppearance.LittleDeen.H3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="@color/color_primary"
+                    android:textSize="@dimen/_16ssp"
+                    tools:text="1" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Text Content -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_14sdp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvKalimaName"
+                    style="@style/TextAppearance.LittleDeen.H4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="@dimen/_13ssp"
+                    tools:text="First Kalima: Tayyibah" />
+
+                <TextView
+                    android:id="@+id/tvKalimaSubtitle"
+                    style="@style/TextAppearance.LittleDeen.P5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:textColor="@color/color_text_secondary"
+                    android:textSize="@dimen/_10ssp"
+                    tools:text="Word of Purity" />
+            </LinearLayout>
+
+            <!-- Play Arrow / Action Button -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPlayArrow"
+                android:layout_width="@dimen/_36sdp"
+                android:layout_height="@dimen/_36sdp"
+                app:cardBackgroundColor="@color/color_primary"
+                app:cardCornerRadius="@dimen/_18sdp"
+                app:cardElevation="@dimen/_4sdp"
+                app:strokeWidth="0dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="▶"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14ssp" />
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </FrameLayout>
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg_app">
+
+    <!-- Header -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/_14sdp"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_8sdp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/_34sdp"
+            android:layout_height="@dimen/_34sdp"
+            app:cardBackgroundColor="@color/color_surface"
+            app:cardCornerRadius="@dimen/_17sdp"
+            app:cardElevation="@dimen/_1sdp"
+            app:strokeColor="@color/color_border"
+            app:strokeWidth="@dimen/_1sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/_8sdp"
+                android:rotation="180"
+                android:src="@drawable/ic_check"
+                app:tint="@color/color_text_primary" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tvHeaderTitle"
+            style="@style/TextAppearance.LittleDeen.H3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="The 6 Kalimas 📜"
+            android:textColor="@color/color_primary"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- PREMIUM HERO CARD WITH CIRCULAR CUT-OFF -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardHeaderHero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_14sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        app:cardBackgroundColor="@color/color_primary"
+        app:cardCornerRadius="@dimen/_28sdp"
+        app:cardElevation="@dimen/_8sdp"
+        app:strokeColor="@color/color_primary_light"
+        app:strokeWidth="@dimen/_2sdp"
+        app:layout_constraintTop_toBottomOf="@id/headerBar">
+
+        <FrameLayout
+            android:id="@+id/flKalimaBannerBg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_140sdp"
+            android:background="@color/color_primary">
+
+            <!-- Decorative glass circles -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="end|top"
+                android:layout_marginTop="-50dp"
+                android:layout_marginEnd="-36dp"
+                app:cardBackgroundColor="#26FFFFFF"
+                app:cardCornerRadius="75dp"
+                app:cardElevation="0dp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="start|bottom"
+                android:layout_marginStart="-34dp"
+                android:layout_marginBottom="-40dp"
+                app:cardBackgroundColor="#1FFFFFFF"
+                app:cardCornerRadius="50dp"
+                app:cardElevation="0dp" />
+
+            <!-- Decorative Emojis -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|top"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_60sdp"
+                android:alpha="0.85"
+                android:text="📜"
+                android:textSize="@dimen/_14ssp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_16sdp">
+
+                <!-- Left Text Content -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.3"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_6sdp"
+                        app:cardBackgroundColor="#FFFFFF"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:cardElevation="@dimen/_2sdp">
+
+                        <TextView
+                            style="@style/TextAppearance.LittleDeen.P5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="@dimen/_8sdp"
+                            android:paddingVertical="@dimen/_2sdp"
+                            android:text="🌟 KALIMAS ACADEMY"
+                            android:textColor="@color/color_primary"
+                            android:textSize="@dimen/_8ssp"
+                            android:textStyle="bold" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        style="@style/TextAppearance.LittleDeen.H2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Learn the 6 Kalimas ✨"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_18ssp" />
+
+                    <TextView
+                        style="@style/TextAppearance.LittleDeen.P5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:text="Strengthen your faith with daily practice"
+                        android:textColor="#F0FFF6"
+                        android:textSize="@dimen/_10ssp" />
+                </LinearLayout>
+
+                <!-- Right Illustration -->
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="@dimen/_74sdp"
+                        android:layout_height="@dimen/_74sdp"
+                        android:layout_gravity="center"
+                        app:cardBackgroundColor="#33FFFFFF"
+                        app:cardCornerRadius="@dimen/_37sdp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#66FFFFFF"
+                        app:strokeWidth="@dimen/_1sdp" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:layout_gravity="center"
+                        app:cardBackgroundColor="#FFFFFF"
+                        app:cardCornerRadius="@dimen/_30sdp"
+                        app:cardElevation="@dimen/_8sdp"
+                        app:strokeColor="#FFD54F"
+                        app:strokeWidth="@dimen/_3sdp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="📜"
+                            android:textSize="@dimen/_28ssp" />
+                    </com.google.android.material.card.MaterialCardView>
+                </FrameLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvKalimasList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingHorizontal="@dimen/_14sdp"
+        android:paddingTop="@dimen/_16sdp"
+        android:paddingBottom="@dimen/_24sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardHeaderHero" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

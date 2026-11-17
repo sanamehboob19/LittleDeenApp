@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg_app">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:paddingBottom="@dimen/_30sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ============================================== -->
+            <!-- SPOTIFY-STYLE GRADIENT HEADER BANNER           -->
+            <!-- ============================================== -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_240sdp">
+
+                <!-- Cover Image Background -->
+                <ImageView
+                    android:id="@+id/ivPlaylistCover"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="Playlist Cover"
+                    android:scaleType="centerCrop"
+                    tools:src="@drawable/bg_input_field" />
+
+                <!-- Dark Gradient Overlay for readability -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_grad_playlist_header" />
+
+                <!-- Top Control Bar (Back, Three-Dot Menu) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_14sdp"
+                    android:paddingTop="@dimen/_12sdp">
+
+                    <!-- Back Button -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnBack"
+                        android:layout_width="@dimen/_36sdp"
+                        android:layout_height="@dimen/_36sdp"
+                        app:cardBackgroundColor="#33000000"
+                        app:cardCornerRadius="@dimen/_18sdp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:contentDescription="Back"
+                            android:padding="@dimen/_9sdp"
+                            android:rotation="180"
+                            android:src="@drawable/ic_check"
+                            app:tint="@color/white" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <!-- Three-Dot Options Menu -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnOptionsMenu"
+                        android:layout_width="@dimen/_36sdp"
+                        android:layout_height="@dimen/_36sdp"
+                        app:cardBackgroundColor="#33000000"
+                        app:cardCornerRadius="@dimen/_18sdp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="⋮"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_18ssp"
+                            android:textStyle="bold" />
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                <!-- Playlist Metadata (Bottom of Banner) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/_16sdp"
+                    android:paddingBottom="@dimen/_16sdp">
+
+                    <!-- Tag -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_6sdp"
+                        app:cardBackgroundColor="#2E7D32"
+                        app:cardCornerRadius="@dimen/_6sdp"
+                        app:cardElevation="0dp">
+
+                        <TextView
+                            style="@style/TextAppearance.LittleDeen.P5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="@dimen/_8sdp"
+                            android:paddingVertical="@dimen/_2sdp"
+                            android:text="YOUR COLLECTION"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_8ssp"
+                            android:textStyle="bold" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Title -->
+                    <TextView
+                        android:id="@+id/tvPlaylistDetailTitle"
+                        style="@style/TextAppearance.LittleDeen.H2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_22ssp"
+                        tools:text="Bedtime Stories" />
+
+                    <!-- Subtitle (Count) -->
+                    <TextView
+                        android:id="@+id/tvPlaylistMeta"
+                        style="@style/TextAppearance.LittleDeen.P5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:textColor="#E0E0E0"
+                        android:textSize="@dimen/_10ssp"
+                        tools:text="3 items • Custom playlist" />
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <!-- ============================================== -->
+            <!-- ACTION BUTTONS (Play All & Change Cover)       -->
+            <!-- ============================================== -->
+            <!-- ============================================== -->
+            <!-- ACTION BUTTONS (Play All & Change Cover)       -->
+            <!-- ============================================== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_14sdp"
+                android:paddingVertical="@dimen/_12sdp">
+
+                <!-- Play All Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPlayAll"
+                    style="@style/TextAppearance.LittleDeen.H5"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_42sdp"
+                    android:layout_marginEnd="@dimen/_6sdp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#00C853"
+                    android:text="▶ Play All"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11ssp"
+                    app:cornerRadius="@dimen/_21sdp"
+                    app:elevation="@dimen/_2sdp" />
+
+                <!-- Change Cover Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnChangeCover"
+                    style="@style/TextAppearance.LittleDeen.H5"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_42sdp"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/color_surface"
+                    android:text="Change Cover"
+                    android:textAllCaps="false"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="@dimen/_11ssp"
+                    app:cornerRadius="@dimen/_21sdp"
+                    app:elevation="0dp"
+                    app:strokeColor="@color/color_border"
+                    app:strokeWidth="@dimen/_1sdp" />
+            </LinearLayout>
+
+            <!-- ============================================== -->
+            <!-- VIDEOS IN THIS PLAYLIST                        -->
+            <!-- ============================================== -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPlaylistVideos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never"
+                android:paddingHorizontal="@dimen/_14sdp" />
+
+            <!-- Empty State -->
+            <LinearLayout
+                android:id="@+id/layoutEmptyPlaylistVideos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/_30sdp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📂"
+                    android:textSize="@dimen/_36ssp" />
+
+                <TextView
+                    style="@style/TextAppearance.LittleDeen.H4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="Your playlist is empty"
+                    android:textColor="@color/color_text_primary" />
+
+                <TextView
+                    style="@style/TextAppearance.LittleDeen.P5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:text="Add your favorite videos to this collection."
+                    android:textColor="@color/color_text_secondary" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

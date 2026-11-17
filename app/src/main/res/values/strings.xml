@@ -1,0 +1,106 @@
+<resources>
+    <string name="app_name">Little Deen App</string>
+
+    <string name="splash_sub_title">Learn  •  Pray  •  Grow</string>
+    <string name="splash_tagline_heading">Islamic Learning App\nfor Kids</string>
+    <string name="splash_tagline_subheading">A safe and positive space\nfor your child\'s digital journey.</string>
+
+    <!-- Splash 2 Strings -->
+    <string name="splash_welcome_greeting">Assalamu Alaikum!</string>
+    <string name="splash_welcome_title">Welcome to Little Deen</string>
+    <string name="tts_splash_welcome">Assalamu Alaikum! Welcome to Little Deen.</string>
+
+
+
+    <!-- Onboarding Slide 1: Real Internet Problem & Safe Walled Garden -->
+    <string name="onboarding_title_1">Safe from the Wild Internet 🛡️</string>
+    <string name="onboarding_desc_1">No unpredictable ads, no harmful content, and no external popups. Little Deen is a 100% escape-proof, halal garden built to protect your child\'s pure heart.</string>
+    <string name="tts_onboarding_1">Safe from the wild internet. No unpredictable ads, no harmful content, and no external popups. Little Deen is an escape-proof, halal garden built to protect your child\'s heart.</string>
+
+    <!-- Onboarding Slide 2: Meaningful Islamic Learning -->
+    <string name="onboarding_title_2">Meaningful Halal Routines 📖</string>
+    <string name="onboarding_desc_2">Replace mindless scrolling with authentic daily Duas, 6 Kalimas, Short Surahs, and inspiring Prophet stories narrated with loving, soothing voices.</string>
+    <string name="tts_onboarding_2">Meaningful halal routines. Replace mindless scrolling with authentic daily Duas, 6 Kalimas, Short Surahs, and inspiring Prophet stories.</string>
+
+    <!-- Onboarding Slide 3: Creative Learning & Mini-Games -->
+    <string name="onboarding_title_3">Creativity, Tracing &amp; Art 🎨</string>
+    <string name="onboarding_desc_3">From Neon Glow drawing and Pixel Art to 123 Numbers, ABC letters, and Shape Tracing — building fine motor skills and creative confidence.</string>
+    <string name="tts_onboarding_3">Creativity, tracing and art. From Neon Glow drawing and Pixel Art to Numbers, Letters, and Shape Tracing, building fine motor skills.</string>
+
+    <!-- Onboarding Slide 4: Parent Trust & Peace of Mind -->
+    <string name="onboarding_title_4">Peace of Mind for Parents 🤝</string>
+    <string name="onboarding_desc_4">Hand over your phone with zero guilt. Protected by a parent gate, customizable themes, and volume controls designed for peaceful homes.</string>
+    <string name="tts_onboarding_4">Peace of mind for parents. Hand over your phone with zero guilt. Protected by a parent gate and customizable settings designed for peaceful homes.</string>
+
+    <!-- Navigation Buttons -->
+    <string name="btn_back">← Back</string>
+    <string name="btn_next">Next →</string>
+    <string name="btn_get_started">Let\'s Explore! 🚀</string>
+
+
+
+
+    <!-- Screen 05: What should we call you? -->
+    <string name="child_name_heading">What should we\ncall you?</string>
+    <string name="child_avatar_subheading">Pick your favorite character!</string>
+    <string name="child_name_hint">Enter your name</string>
+    <string name="child_name_help_parent">Ask a parent to help you type!</string>
+    <string name="btn_continue">Continue</string>
+    <string name="default_child_name">Little Kid</string>
+
+    <!-- TTS String -->
+    <string name="tts_child_name">What should we call you? Pick your favorite character, or ask a parent to type your name!</string>
+
+
+    <!-- Screen 06: Choose Age Group -->
+    <string name="age_group_title">Choose Age Group</string>
+    <string name="age_group_subtitle">This will help us show the right\ncontent for your child.</string>
+
+    <string name="age_option_1_range">2 – 5 Years</string>
+    <string name="age_option_1_desc">(Pre-school)</string>
+
+    <string name="age_option_2_range">6 – 8 Years</string>
+    <string name="age_option_2_desc">(Early School)</string>
+
+    <string name="age_option_3_range">9 – 12 Years</string>
+    <string name="age_option_3_desc">(Older Kids)</string>
+
+    <string name="tts_age_selection">Choose your age group so we can show the right content for your child!</string>
+
+    <!-- Screen: Choose App Theme -->
+    <string name="theme_selection_title">Pick Your Favorite Color</string>
+    <string name="theme_selection_subtitle">Make Little Deen look just the way you like it!</string>
+    <string name="tts_theme_selection">Pick your favorite color to personalize your Little Deen app!</string>
+
+    <!-- Screen 07: Audio & Preferences -->
+    <string name="audio_prefs_title">Voice &amp; Audio</string>
+    <string name="audio_prefs_subtitle">Customize how Little Deen sounds for your child.</string>
+
+    <string name="pref_tts_title">Voice Narration</string>
+    <string name="pref_tts_desc">Read stories and greetings aloud</string>
+
+    <string name="pref_bg_music_title">Background Music</string>
+    <string name="pref_bg_music_desc">Gentle, calming background tones</string>
+
+    <string name="pref_sound_fx_title">Sound Effects</string>
+    <string name="pref_sound_fx_desc">Play joyful sounds on button taps</string>
+    <string name="pref_voice_volume">Audio Volume</string>
+
+    <string name="btn_test_voice">Test Voice 🎙️</string>
+    <string name="btn_lets_explore">Let\'s Explore!</string>
+
+    <string name="tts_sample_test">Welcome Little Deen Kids! This is how I sound.</string>
+    <string name="tts_audio_prefs_intro">Customize your voice and sound settings here, then tap Let\'s Explore!</string>
+
+    <!-- Audio Slider Labels & Hints -->
+    <string name="pref_voice_speed">Voice Speed</string>
+    <string name="pref_voice_speed_desc">Adjust how fast the voice speaks</string>
+
+    <string name="pref_voice_pitch">Voice Pitch</string>
+    <string name="pref_voice_pitch_desc">Change higher or deeper voice tone</string>
+
+    <string name="pref_music_volume">Music Volume</string>
+    <string name="pref_music_volume_desc">Adjust background music loudness</string>
+
+
+</resources>

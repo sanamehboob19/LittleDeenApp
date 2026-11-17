@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand Primary (Muted Lavender for Dark Mode) -->
+<!--    <color name="color_primary">#8E80E8</color>-->
+<!--    <color name="color_primary_variant">#5C4DB1</color>-->
+<!--    <color name="color_primary_light">#2A244D</color>-->
+
+<!--    &lt;!&ndash; Brand Secondary (Soft Mint Green) &ndash;&gt;-->
+<!--    <color name="color_secondary">#4ED8C7</color>-->
+<!--    <color name="color_secondary_variant">#26A69A</color>-->
+<!--    <color name="color_secondary_light">#1A3D39</color>-->
+
+<!--    &lt;!&ndash; Brand Warmth (Soft Gold) &ndash;&gt;-->
+<!--    <color name="color_accent">#FBC252</color>-->
+<!--    <color name="color_accent_light">#382E1A</color>-->
+<!--    <color name="color_cream_bg">#13111C</color>-->
+
+<!--    &lt;!&ndash; Backgrounds & Surfaces &ndash;&gt;-->
+<!--    <color name="color_bg_app">#13111C</color>-->
+<!--    <color name="color_surface">#1C1929</color>-->
+<!--    <color name="color_surface_card">#242036</color>-->
+<!--    <color name="color_border">#2F2B45</color>-->
+
+<!--    &lt;!&ndash; Typography / Text Colors &ndash;&gt;-->
+<!--    <color name="color_text_primary">#F4F3F8</color>-->
+<!--    <color name="color_text_secondary">#B2ACCA</color>-->
+<!--    <color name="color_text_tertiary">#7B7593</color>-->
+<!--    <color name="color_text_on_primary">#FFFFFF</color>-->
+
+<!--    &lt;!&ndash; Functional States &ndash;&gt;-->
+<!--    <color name="color_success">#2ECC71</color>-->
+<!--    <color name="color_warning">#F39C12</color>-->
+<!--    <color name="color_error">#FF6B6B</color>-->
+<!--    <color name="color_ripple">#338E80E8</color>-->
+
+<!--    &lt;!&ndash; Base Constants &ndash;&gt;-->
+<!--    <color name="white">#FFFFFF</color>-->
+<!--    <color name="black">#000000</color>-->
+<!--    <color name="transparent">#00000000</color>-->
+</resources>

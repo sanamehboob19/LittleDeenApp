@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg_app">
+
+    <!-- Scrollable Content Container -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:paddingHorizontal="@dimen/_16sdp"
+        android:paddingTop="@dimen/_14sdp"
+        android:paddingBottom="@dimen/_20sdp"
+        app:layout_constraintBottom_toTopOf="@id/btnLetsExplore"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/tvTitle"
+                style="@style/TextAppearance.LittleDeen.H2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/audio_prefs_title"
+                android:textColor="@color/color_primary"
+                android:textSize="@dimen/_22ssp" />
+
+            <!-- Subtitle -->
+            <TextView
+                android:id="@+id/tvSubtitle"
+                style="@style/TextAppearance.LittleDeen.P4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:gravity="center"
+                android:text="@string/audio_prefs_subtitle"
+                android:textColor="@color/color_text_secondary" />
+
+            <!-- CARD 1: iOS-STYLE TOGGLE SWITCHES -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSwitches"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                app:cardBackgroundColor="@color/color_surface"
+                app:cardCornerRadius="@dimen/_18sdp"
+                app:cardElevation="@dimen/_2sdp"
+                app:strokeColor="@color/color_border"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/_16sdp"
+                    android:paddingVertical="@dimen/_10sdp">
+
+                    <!-- Switch 1: Voice Narration (TTS) -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingVertical="@dimen/_8sdp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/TextAppearance.LittleDeen.H4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pref_tts_title"
+                                android:textColor="@color/color_text_primary"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <TextView
+                                style="@style/TextAppearance.LittleDeen.P5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:text="@string/pref_tts_desc"
+                                android:textColor="@color/color_text_secondary" />
+                        </LinearLayout>
+
+                        <!-- iOS Style Material Switch -->
+                        <com.google.android.material.materialswitch.MaterialSwitch
+                            android:id="@+id/switchTts"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            app:thumbIcon="@null" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:background="@color/color_border" />
+
+                    <!-- Switch 2: Background Music -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingVertical="@dimen/_8sdp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/TextAppearance.LittleDeen.H4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pref_bg_music_title"
+                                android:textColor="@color/color_text_primary"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <TextView
+                                style="@style/TextAppearance.LittleDeen.P5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:text="@string/pref_bg_music_desc"
+                                android:textColor="@color/color_text_secondary" />
+                        </LinearLayout>
+
+                        <!-- iOS Style Material Switch -->
+                        <com.google.android.material.materialswitch.MaterialSwitch
+                            android:id="@+id/switchBgMusic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            app:thumbIcon="@null" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:background="@color/color_border" />
+
+                    <!-- Switch 3: Sound Effects (FX) -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingVertical="@dimen/_8sdp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/TextAppearance.LittleDeen.H4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pref_sound_fx_title"
+                                android:textColor="@color/color_text_primary"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <TextView
+                                style="@style/TextAppearance.LittleDeen.P5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:text="@string/pref_sound_fx_desc"
+                                android:textColor="@color/color_text_secondary" />
+                        </LinearLayout>
+
+                        <!-- iOS Style Material Switch -->
+                        <com.google.android.material.materialswitch.MaterialSwitch
+                            android:id="@+id/switchSoundFx"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            app:thumbIcon="@null" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- CARD 2: SEEKBARS CONTROLS -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSliders"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_14sdp"
+                app:cardBackgroundColor="@color/color_surface"
+                app:cardCornerRadius="@dimen/_18sdp"
+                app:cardElevation="@dimen/_2sdp"
+                app:strokeColor="@color/color_border"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/_16sdp"
+                    android:paddingVertical="@dimen/_14sdp">
+
+                    <!-- 1. TTS Voice Speed -->
+                    <TextView
+                        style="@style/TextAppearance.LittleDeen.H4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pref_voice_speed"
+                        android:textColor="@color/color_text_primary"
+                        android:textSize="@dimen/_13ssp" />
+
+                    <TextView
+                        style="@style/TextAppearance.LittleDeen.P5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_1sdp"
+                        android:text="@string/pref_voice_speed_desc"
+                        android:textColor="@color/color_text_secondary" />
+
+                    <SeekBar
+                        android:id="@+id/sbSpeed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:max="100"
+                        android:progress="45" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:background="@color/color_border" />
+
+                    <!-- 2. TTS Voice Pitch -->
+                    <TextView
+                        style="@style/TextAppearance.LittleDeen.H4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pref_voice_pitch"
+                        android:textColor="@color/color_text_primary"
+                        android:textSize="@dimen/_13ssp" />
+
+                    <TextView
+                        style="@style/TextAppearance.LittleDeen.P5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_1sdp"
+                        android:text="@string/pref_voice_pitch_desc"
+                        android:textColor="@color/color_text_secondary" />
+
+                    <SeekBar
+                        android:id="@+id/sbPitch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:max="100"
+                        android:progress="60" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:background="@color/color_border" />
+
+                    <!-- 3. Background Music Volume -->
+                    <TextView
+                        style="@style/TextAppearance.LittleDeen.H4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pref_music_volume"
+                        android:textColor="@color/color_text_primary"
+                        android:textSize="@dimen/_13ssp" />
+
+                    <TextView
+                        style="@style/TextAppearance.LittleDeen.P5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_1sdp"
+                        android:text="@string/pref_music_volume_desc"
+                        android:textColor="@color/color_text_secondary" />
+
+                    <SeekBar
+                        android:id="@+id/sbVolume"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:max="100"
+                        android:progress="80" />
+
+                    <!-- Live Test Voice Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnTestVoice"
+                        style="@style/TextAppearance.LittleDeen.H5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_38sdp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:backgroundTint="@color/color_primary_light"
+                        android:text="@string/btn_test_voice"
+                        android:textAllCaps="false"
+                        android:textColor="@color/color_primary"
+                        app:cornerRadius="@dimen/_12sdp"
+                        app:elevation="0dp"
+                        app:strokeColor="@color/color_primary"
+                        app:strokeWidth="@dimen/_1sdp" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Bottom Action Button: Let's Explore! -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLetsExplore"
+        style="@style/TextAppearance.LittleDeen.H4"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginHorizontal="@dimen/_18sdp"
+        android:layout_marginBottom="@dimen/_16sdp"
+        android:backgroundTint="@color/color_primary"
+        android:text="@string/btn_lets_explore"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:cornerRadius="@dimen/_16sdp"
+        app:elevation="@dimen/_4sdp"
+        app:rippleColor="#33FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg_app">
+
+    <!-- Top Header Bar -->
+    <!-- Top Header Bar -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/_14sdp"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_8sdp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/_34sdp"
+            android:layout_height="@dimen/_34sdp"
+            app:cardBackgroundColor="@color/color_surface"
+            app:cardCornerRadius="@dimen/_17sdp"
+            app:cardElevation="@dimen/_1sdp"
+            app:strokeColor="@color/color_border"
+            app:strokeWidth="@dimen/_1sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="Back"
+                android:padding="@dimen/_8sdp"
+                android:rotation="180"
+                android:src="@drawable/ic_check"
+                app:tint="@color/color_text_primary" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tvHeaderTitle"
+            style="@style/TextAppearance.LittleDeen.H3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Digital Tasbeeh 📿"
+            android:textColor="@color/color_primary"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Right Side: Audio Toggle & Reset -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- Audio Voice Toggle -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAudioToggle"
+                android:layout_width="@dimen/_34sdp"
+                android:layout_height="@dimen/_34sdp"
+                android:layout_marginEnd="@dimen/_6sdp"
+                app:cardBackgroundColor="@color/color_surface"
+                app:cardCornerRadius="@dimen/_17sdp"
+                app:cardElevation="@dimen/_1sdp"
+                app:strokeColor="@color/color_border"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <ImageView
+                    android:id="@+id/ivAudioToggle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/_7sdp"
+                    android:src="@drawable/ic_volume_up"
+                    app:tint="@color/color_primary" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Reset Button -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnResetCounter"
+                android:layout_width="@dimen/_34sdp"
+                android:layout_height="@dimen/_34sdp"
+                app:cardBackgroundColor="@color/color_surface"
+                app:cardCornerRadius="@dimen/_17sdp"
+                app:cardElevation="@dimen/_1sdp"
+                app:strokeColor="@color/color_border"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="🔄"
+                    android:textSize="@dimen/_14ssp" />
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <!-- Main Content Container -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingHorizontal="@dimen/_16sdp"
+        android:paddingBottom="@dimen/_24sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerBar">
+
+        <!-- 1. ACTIVE DHIKR DISPLAY CARD -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardDhikrDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:cardBackgroundColor="@color/color_surface"
+            app:cardCornerRadius="@dimen/_24sdp"
+            app:cardElevation="@dimen/_4sdp"
+            app:strokeColor="@color/color_primary_light"
+            app:strokeWidth="@dimen/_2sdp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_grad_hero">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingVertical="@dimen/_18sdp"
+                    android:paddingHorizontal="@dimen/_16sdp">
+
+                    <TextView
+                        android:id="@+id/tvDhikrArabic"
+                        style="@style/TextAppearance.LittleDeen.H2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="سُبْحَانَ اللَّهِ"
+                        android:textColor="@color/color_primary"
+                        android:textSize="@dimen/_26ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvDhikrEnglish"
+                        style="@style/TextAppearance.LittleDeen.H4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:text="SubhanAllah (Glory be to Allah)"
+                        android:textColor="@color/color_text_primary"
+                        android:textSize="@dimen/_13ssp" />
+
+                    <TextView
+                        style="@style/TextAppearance.LittleDeen.P5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:text="Tap below to count your praises 📿"
+                        android:textColor="@color/color_text_secondary"
+                        android:textSize="@dimen/_10ssp" />
+                </LinearLayout>
+            </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 2. GIANT INTERACTIVE TAP BUTTON (Center) -->
+        <FrameLayout
+            android:id="@+id/flCounterButton"
+            android:layout_width="@dimen/_180sdp"
+            android:layout_height="@dimen/_180sdp"
+            app:layout_constraintBottom_toTopOf="@id/rvDhikrSelector"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardDhikrDisplay">
+
+            <!-- Outer Pulsing Glow Ring -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardBackgroundColor="@color/color_primary_light"
+                app:cardCornerRadius="@dimen/_90sdp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/color_primary"
+                app:strokeWidth="@dimen/_2sdp" />
+
+            <!-- Inner Tap Circle -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardTapCircle"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="@color/color_primary"
+                app:cardCornerRadius="@dimen/_75sdp"
+                app:cardElevation="@dimen/_8sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_grad_video"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvCounterNumber"
+                        style="@style/TextAppearance.LittleDeen.H1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_44ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        style="@style/TextAppearance.LittleDeen.H5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:text="TAP TO COUNT ✨"
+                        android:textColor="#E8FFF3"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </FrameLayout>
+
+        <!-- 3. DHIKR SELECTOR CHIPS (Bottom Horizontal Row) -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvDhikrSelector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

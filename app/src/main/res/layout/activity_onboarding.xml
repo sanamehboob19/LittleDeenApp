@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <!-- 1. Fullscreen ViewPager2 -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPagerOnboarding"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 2. Floating Audio Toggle (Top-Right) -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardAudioToggle"
+        android:layout_width="@dimen/_36sdp"
+        android:layout_height="@dimen/_36sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        app:cardBackgroundColor="#66000000"
+        app:cardCornerRadius="@dimen/_18sdp"
+        app:cardElevation="@dimen/_4sdp"
+        app:strokeColor="#33FFFFFF"
+        app:strokeWidth="@dimen/_1sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivAudioToggle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Toggle Audio"
+            android:padding="@dimen/_8sdp"
+            android:src="@drawable/ic_volume_up"
+            app:tint="@android:color/white" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- ============================================== -->
+    <!-- 3. BOTTOM-LEFT: Back Button & Dots Indicator   -->
+    <!-- ============================================== -->
+    <LinearLayout
+        android:id="@+id/layoutBottomLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_18sdp"
+        android:layout_marginBottom="@dimen/_16sdp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Back Button -->
+        <TextView
+            android:id="@+id/btnBack"
+            style="@style/TextAppearance.LittleDeen.H4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:shadowColor="#80000000"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:text="← Back"
+            android:textColor="#CCFFFFFF"
+            android:textSize="@dimen/_11ssp"
+            android:visibility="invisible" />
+
+        <!-- Dots Indicator -->
+        <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+            android:id="@+id/dotsIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:dotsColor="#66FFFFFF"
+            app:dotsCornerRadius="@dimen/_4sdp"
+            app:dotsSize="@dimen/_7sdp"
+            app:dotsSpacing="@dimen/_4sdp"
+            app:selectedDotColor="@color/color_primary" />
+    </LinearLayout>
+
+    <!-- ============================================== -->
+    <!-- 4. BOTTOM-RIGHT CORNER NEXT BUTTON (Sketch)    -->
+    <!-- ============================================== -->
+    <TextView
+        android:id="@+id/btnAction"
+        style="@style/TextAppearance.LittleDeen.H3"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_52sdp"
+        android:background="@drawable/bg_curve_next_button"
+        android:clickable="true"
+        android:elevation="@dimen/_8sdp"
+        android:focusable="true"
+        android:gravity="center"
+        android:minWidth="@dimen/_115sdp"
+        android:paddingStart="@dimen/_26sdp"
+        android:paddingEnd="@dimen/_20sdp"
+        android:text="@string/btn_next"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_13ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

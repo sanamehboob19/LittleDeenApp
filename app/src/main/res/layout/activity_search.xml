@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg_app">
+
+    <!-- ============================================== -->
+    <!-- 1. TOP SEARCH BAR                              -->
+    <!-- ============================================== -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutSearchHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/_12sdp"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_8sdp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Back Button -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/_36sdp"
+            android:layout_height="@dimen/_36sdp"
+            app:cardBackgroundColor="@color/color_surface"
+            app:cardCornerRadius="@dimen/_18sdp"
+            app:cardElevation="@dimen/_1sdp"
+            app:strokeColor="@color/color_border"
+            app:strokeWidth="@dimen/_1sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="Back"
+                android:padding="@dimen/_9sdp"
+                android:rotation="180"
+                android:src="@drawable/ic_check"
+                app:tint="@color/color_text_primary" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Search Input Field Box -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardSearchInput"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            app:cardBackgroundColor="@color/color_surface"
+            app:cardCornerRadius="@dimen/_20sdp"
+            app:cardElevation="@dimen/_1sdp"
+            app:strokeColor="@color/color_border"
+            app:strokeWidth="@dimen/_1sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnBack"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_12sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🔍"
+                    android:textSize="@dimen/_13ssp" />
+
+                <EditText
+                    android:id="@+id/etSearch"
+                    style="@style/TextAppearance.LittleDeen.H5"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="Search safe videos..."
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textColor="@color/color_text_primary"
+                    android:textColorHint="@color/color_text_tertiary"
+                    android:textSize="@dimen/_11ssp" />
+
+                <!-- Clear Text Button -->
+                <ImageView
+                    android:id="@+id/ivClearSearch"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Clear"
+                    android:padding="@dimen/_3sdp"
+                    android:src="@android:drawable/ic_menu_close_clear_cancel"
+                    android:visibility="gone"
+                    app:tint="@color/color_text_tertiary"
+                    tools:visibility="visible" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- ============================================== -->
+    <!-- 2. RECOMMENDED SEARCHES SECTION (Matching Img 2)-->
+    <!-- ============================================== -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollRecommended"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutSearchHeader">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/_14sdp"
+            android:paddingTop="@dimen/_10sdp">
+
+            <TextView
+                android:id="@+id/tvRecommendedTitle"
+                style="@style/TextAppearance.LittleDeen.H4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recommended Searches"
+                android:textColor="@color/color_text_secondary"
+                android:textSize="@dimen/_12ssp" />
+
+            <!-- Flowing Chip Tags -->
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupRecommended"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:chipSpacingHorizontal="@dimen/_6sdp"
+                app:chipSpacingVertical="@dimen/_6sdp">
+
+                <!-- 1. Ramadan -->
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipRamadan"
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_36sdp"
+                    android:text="🔍  Ramadan"
+                    android:textColor="@color/color_text_primary"
+                    app:chipBackgroundColor="@color/color_surface"
+                    app:chipCornerRadius="@dimen/_18sdp"
+                    app:chipStrokeColor="@color/color_border"
+                    app:chipStrokeWidth="@dimen/_1sdp" />
+
+                <!-- 2. Prophet Stories -->
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipProphets"
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_36sdp"
+                    android:text="🔍  Stories of Prophets"
+                    android:textColor="@color/color_text_primary"
+                    app:chipBackgroundColor="@color/color_surface"
+                    app:chipCornerRadius="@dimen/_18sdp"
+                    app:chipStrokeColor="@color/color_border"
+                    app:chipStrokeWidth="@dimen/_1sdp" />
+
+                <!-- 3. Animals -->
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipAnimals"
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_36sdp"
+                    android:text="🔍  Animals"
+                    android:textColor="@color/color_text_primary"
+                    app:chipBackgroundColor="@color/color_surface"
+                    app:chipCornerRadius="@dimen/_18sdp"
+                    app:chipStrokeColor="@color/color_border"
+                    app:chipStrokeWidth="@dimen/_1sdp" />
+
+                <!-- 4. Good Manners -->
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipManners"
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_36sdp"
+                    android:text="🔍  Good Manners"
+                    android:textColor="@color/color_text_primary"
+                    app:chipBackgroundColor="@color/color_surface"
+                    app:chipCornerRadius="@dimen/_18sdp"
+                    app:chipStrokeColor="@color/color_border"
+                    app:chipStrokeWidth="@dimen/_1sdp" />
+
+                <!-- 5. Alphabet ABC -->
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipAlphabet"
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_36sdp"
+                    android:text="🔍  Alphabet &amp; Phonics"
+                    android:textColor="@color/color_text_primary"
+                    app:chipBackgroundColor="@color/color_surface"
+                    app:chipCornerRadius="@dimen/_18sdp"
+                    app:chipStrokeColor="@color/color_border"
+                    app:chipStrokeWidth="@dimen/_1sdp" />
+
+                <!-- 6. Nasheeds -->
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipNasheeds"
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_36sdp"
+                    android:text="🔍  Nasheeds &amp; Poems"
+                    android:textColor="@color/color_text_primary"
+                    app:chipBackgroundColor="@color/color_surface"
+                    app:chipCornerRadius="@dimen/_18sdp"
+                    app:chipStrokeColor="@color/color_border"
+                    app:chipStrokeWidth="@dimen/_1sdp" />
+
+                <!-- 7. Birds -->
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipBirds"
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_36sdp"
+                    android:text="🔍  Birds Learning"
+                    android:textColor="@color/color_text_primary"
+                    app:chipBackgroundColor="@color/color_surface"
+                    app:chipCornerRadius="@dimen/_18sdp"
+                    app:chipStrokeColor="@color/color_border"
+                    app:chipStrokeWidth="@dimen/_1sdp" />
+
+            </com.google.android.material.chip.ChipGroup>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- ============================================== -->
+    <!-- 3. SEARCH RESULTS LIST                         -->
+    <!-- ============================================== -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSearchResults"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingHorizontal="@dimen/_12sdp"
+        android:paddingTop="@dimen/_6sdp"
+        android:paddingBottom="@dimen/_20sdp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutSearchHeader" />
+
+    <!-- ============================================== -->
+    <!-- 4. NO RESULTS / EMPTY STATE                    -->
+    <!-- ============================================== -->
+    <LinearLayout
+        android:id="@+id/layoutEmptyResults"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutSearchHeader">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🔍"
+            android:textSize="@dimen/_36ssp" />
+
+        <TextView
+            style="@style/TextAppearance.LittleDeen.H4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:text="No videos found"
+            android:textColor="@color/color_text_primary" />
+
+        <TextView
+            style="@style/TextAppearance.LittleDeen.P5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:text="Try another keyword or tap a recommended tag"
+            android:textColor="@color/color_text_secondary" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

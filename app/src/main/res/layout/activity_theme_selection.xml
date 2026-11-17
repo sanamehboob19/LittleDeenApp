@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg_app">
+
+    <!-- Inner container holds all screen padding safely -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="@dimen/_14sdp"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_14sdp">
+
+        <!-- ============================================== -->
+        <!-- 1. TOP BAR: AUDIO TOGGLE                       -->
+        <!-- ============================================== -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardAudioToggle"
+            android:layout_width="@dimen/_36sdp"
+            android:layout_height="@dimen/_36sdp"
+            app:cardBackgroundColor="@color/color_surface"
+            app:cardCornerRadius="@dimen/_18sdp"
+            app:cardElevation="@dimen/_1sdp"
+            app:strokeColor="@color/color_border"
+            app:strokeWidth="@dimen/_1sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivAudioToggle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Toggle Audio"
+                android:padding="@dimen/_8sdp"
+                android:src="@drawable/ic_volume_up"
+                app:tint="@color/color_primary" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Screen Title -->
+        <TextView
+            android:id="@+id/tvTitle"
+            style="@style/TextAppearance.LittleDeen.H2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:gravity="center"
+            android:text="@string/theme_selection_title"
+            android:textColor="@color/color_text_primary"
+            android:textSize="@dimen/_18ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardAudioToggle" />
+
+        <!-- Subtitle -->
+        <TextView
+            android:id="@+id/tvSubtitle"
+            style="@style/TextAppearance.LittleDeen.P4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:gravity="center"
+            android:text="@string/theme_selection_subtitle"
+            android:textColor="@color/color_text_secondary"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+        <!-- ============================================== -->
+        <!-- 2. MODERN LIVE PREVIEW SHOWCASE                -->
+        <!-- ============================================== -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardLivePreview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            app:cardBackgroundColor="@color/color_primary_light"
+            app:cardCornerRadius="@dimen/_20sdp"
+            app:cardElevation="@dimen/_2sdp"
+            app:strokeColor="@color/color_primary"
+            app:strokeWidth="@dimen/_2sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSubtitle">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_14sdp"
+                android:paddingVertical="@dimen/_12sdp">
+
+                <!-- Left: Circular Color Swatch Preview -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardPreviewSwatch"
+                    android:layout_width="@dimen/_42sdp"
+                    android:layout_height="@dimen/_42sdp"
+                    app:cardBackgroundColor="@color/color_surface"
+                    app:cardCornerRadius="@dimen/_21sdp"
+                    app:cardElevation="@dimen/_2sdp"
+                    app:strokeColor="@color/white"
+                    app:strokeWidth="@dimen/_2sdp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="🎨"
+                        android:textSize="@dimen/_18ssp" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Center: Theme Name & Tag -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvThemeNamePreview"
+                        style="@style/TextAppearance.LittleDeen.H3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_primary"
+                        android:textSize="@dimen/_15ssp"
+                        tools:text="Royal Lavender" />
+
+                    <TextView
+                        style="@style/TextAppearance.LittleDeen.P5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_1sdp"
+                        android:text="Your App Color Scheme"
+                        android:textColor="@color/color_text_secondary"
+                        android:textSize="@dimen/_9ssp" />
+                </LinearLayout>
+
+                <!-- Right: Active Check Badge -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="#20000000"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="0dp">
+
+                    <TextView
+                        style="@style/TextAppearance.LittleDeen.P5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/_8sdp"
+                        android:paddingVertical="@dimen/_3sdp"
+                        android:text="Active ✓"
+                        android:textColor="@color/color_text_primary"
+                        android:textSize="@dimen/_9ssp"
+                        android:textStyle="bold" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ============================================== -->
+        <!-- 3. SECTION HEADER                              -->
+        <!-- ============================================== -->
+        <LinearLayout
+            android:id="@+id/layoutSectionHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/cardLivePreview">
+
+            <TextView
+                style="@style/TextAppearance.LittleDeen.H4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Curated Palettes"
+                android:textColor="@color/color_text_primary"
+                android:textSize="@dimen/_12ssp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:background="@color/color_border" />
+        </LinearLayout>
+
+        <!-- ============================================== -->
+        <!-- 4. 2-COLUMN COLOR PALETTE GRID                 -->
+        <!-- ============================================== -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvThemeColors"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            tools:listitem="@layout/item_theme_color_box"
+            app:layout_constraintBottom_toTopOf="@id/btnContinue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutSectionHeader" />
+
+        <!-- ============================================== -->
+        <!-- 5. CONTINUE / SAVE BUTTON                      -->
+        <!-- ============================================== -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnContinue"
+            style="@style/TextAppearance.LittleDeen.H4"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_48sdp"
+            android:backgroundTint="@color/color_primary"
+            android:text="@string/btn_continue"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13ssp"
+            app:cornerRadius="@dimen/_16sdp"
+            app:elevation="@dimen/_2sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

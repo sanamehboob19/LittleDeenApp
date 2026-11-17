@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/_250sdp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    app:cardBackgroundColor="@color/color_surface"
+    app:cardCornerRadius="@dimen/_28sdp"
+    app:cardElevation="@dimen/_12sdp"
+    app:strokeColor="@color/color_primary_light"
+    app:strokeWidth="@dimen/_2sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/_20sdp"
+        android:paddingTop="@dimen/_22sdp"
+        android:paddingBottom="@dimen/_24sdp">
+
+        <!-- Floating playful icon badge -->
+
+        <!-- Title -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="@dimen/_64sdp"
+            android:layout_height="@dimen/_64sdp"
+            app:cardBackgroundColor="@color/color_primary_light"
+            app:cardCornerRadius="@dimen/_32sdp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/color_primary"
+            app:strokeWidth="@dimen/_2sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="🕌"
+                android:textSize="@dimen/_28ssp" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            style="@style/TextAppearance.LittleDeen.H2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:text="Getting Ready! ✨"
+            android:textColor="@color/color_text_primary"
+            android:textSize="@dimen/_17ssp" />
+
+        <!-- Subtitle message -->
+        <TextView
+            android:id="@+id/tvLoadingMessage"
+            style="@style/TextAppearance.LittleDeen.P4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:gravity="center"
+            android:text="Setting up your fun Islamic videos &amp; stories..."
+            android:textColor="@color/color_text_secondary"
+            android:textSize="@dimen/_11ssp" />
+
+        <!-- Progress Indicator -->
+        <ProgressBar
+            android:id="@+id/progressBarKids"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_18sdp"
+            android:indeterminate="true"
+            android:progressTint="@color/color_primary" />
+
+        <!-- Cute footer hint -->
+        <TextView
+            style="@style/TextAppearance.LittleDeen.P5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="Almost there, little explorer! 🚀"
+            android:textColor="@color/color_text_tertiary"
+            android:textSize="@dimen/_9ssp" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

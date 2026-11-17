@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_3sdp">
+
+    <!-- 1. Outer Selection Ring (Layer 1 - Shown only when selected) -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardSelectionRing"
+        android:layout_width="@dimen/_34sdp"
+        android:layout_height="@dimen/_34sdp"
+        android:layout_gravity="center"
+        android:visibility="invisible"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardCornerRadius="@dimen/_17sdp"
+        app:cardElevation="0dp"
+        app:strokeColor="@color/color_primary"
+        app:strokeWidth="@dimen/_2sdp" />
+
+    <!-- 2. Inner Color Circle (Layer 2 - ALWAYS VISIBLE) -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardColorSwatch"
+        android:layout_width="@dimen/_26sdp"
+        android:layout_height="@dimen/_26sdp"
+        android:layout_gravity="center"
+        app:cardCornerRadius="@dimen/_13sdp"
+        app:cardElevation="@dimen/_1sdp"
+        app:strokeColor="#FFFFFF"
+        app:strokeWidth="@dimen/_1sdp">
+
+        <!-- Checkmark inside active color -->
+        <ImageView
+            android:id="@+id/ivCheckmark"
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="@dimen/_12sdp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_check"
+            android:visibility="gone"
+            app:tint="@android:color/white" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>

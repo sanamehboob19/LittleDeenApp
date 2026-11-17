@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg_app">
+
+    <!-- TOP HALF: Large Zooming Illustration Banner -->
+    <FrameLayout
+        android:id="@+id/flIllustrationContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/color_primary_light"
+        app:layout_constraintHeight_percent="0.48"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivDuaPageArt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="Dua Illustration"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/avatar_girl_1" />
+
+        <!-- Gradient fade at bottom of image for seamless transition -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/bg_grad_playlist_header" />
+    </FrameLayout>
+
+    <!-- BOTTOM HALF: Content Card (Arabic, Translation, Interactive prompts) -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="-24dp"
+        app:cardBackgroundColor="@color/color_surface"
+        app:cardCornerRadius="@dimen/_28sdp"
+        app:cardElevation="@dimen/_8sdp"
+        app:strokeWidth="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/flIllustrationContainer">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/_20sdp"
+            android:paddingTop="@dimen/_20sdp"
+            android:paddingBottom="@dimen/_24sdp">
+
+            <!-- Title & Subtitle -->
+            <TextView
+                android:id="@+id/tvPageTitle"
+                style="@style/TextAppearance.LittleDeen.H2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_text_primary"
+                android:textSize="@dimen/_20ssp"
+                tools:text="Sneezing Dua" />
+
+            <TextView
+                android:id="@+id/tvPageSubtitle"
+                style="@style/TextAppearance.LittleDeen.P4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:textColor="@color/color_primary"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                tools:text="When you sneeze, what should you say?" />
+
+            <!-- Arabic Text Box -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="#F9FBE7"
+                app:cardCornerRadius="@dimen/_18sdp"
+                app:cardElevation="0dp"
+                app:strokeColor="#F0F4C3"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_12sdp">
+
+                    <TextView
+                        android:id="@+id/tvArabicText"
+                        style="@style/TextAppearance.LittleDeen.H2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="#33691E"
+                        android:textSize="@dimen/_18ssp"
+                        tools:text="الْحَمْدُ لِلَّهِ" />
+
+                    <TextView
+                        android:id="@+id/tvTranslation"
+                        style="@style/TextAppearance.LittleDeen.P5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:textColor="#558B2F"
+                        android:textSize="@dimen/_11ssp"
+                        tools:text="All praise is for Allah (Alhamdulillah)" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Interactive Voice & Listen Actions -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnListenAudio"
+                    style="@style/TextAppearance.LittleDeen.H4"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_48sdp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/color_primary"
+                    android:text="🔊 Listen &amp; Learn"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    app:cornerRadius="@dimen/_24sdp"
+                    app:elevation="@dimen/_2sdp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

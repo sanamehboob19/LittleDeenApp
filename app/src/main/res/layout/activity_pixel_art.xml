@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg_app">
+
+    <!-- Top Action Bar -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/_14sdp"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_8sdp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/_34sdp"
+            android:layout_height="@dimen/_34sdp"
+            app:cardBackgroundColor="@color/color_surface"
+            app:cardCornerRadius="@dimen/_17sdp"
+            app:cardElevation="@dimen/_1sdp"
+            app:strokeColor="@color/color_border"
+            app:strokeWidth="@dimen/_1sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/_8sdp"
+                android:rotation="180"
+                android:src="@drawable/ic_check"
+                app:tint="@color/color_text_primary" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tvModelTitle"
+            style="@style/TextAppearance.LittleDeen.H3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:gravity="center"
+            android:textColor="@color/color_primary"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/layoutRightActions"
+            app:layout_constraintStart_toEndOf="@+id/btnBack"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Smiley Face 😊" />
+
+        <LinearLayout
+            android:id="@+id/layoutRightActions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- 💡 Hint Toggle Button -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnHint"
+                android:layout_width="@dimen/_34sdp"
+                android:layout_height="@dimen/_34sdp"
+                android:layout_marginEnd="@dimen/_6sdp"
+                app:cardBackgroundColor="@color/color_surface"
+                app:cardCornerRadius="@dimen/_17sdp"
+                app:cardElevation="@dimen/_1sdp"
+                app:strokeColor="@color/color_border"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="💡"
+                    android:textSize="@dimen/_13ssp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 🗑 Clear Grid -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnClear"
+                android:layout_width="@dimen/_34sdp"
+                android:layout_height="@dimen/_34sdp"
+                app:cardBackgroundColor="@color/color_surface"
+                app:cardCornerRadius="@dimen/_17sdp"
+                app:cardElevation="@dimen/_1sdp"
+                app:strokeColor="@color/color_border"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="🗑"
+                    android:textSize="@dimen/_13ssp" />
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Top Target Reference Preview Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardTargetPreview"
+        android:layout_width="@dimen/_64sdp"
+        android:layout_height="@dimen/_64sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="@dimen/_14sdp"
+        app:cardElevation="@dimen/_3sdp"
+        app:strokeColor="@color/color_primary"
+        app:strokeWidth="@dimen/_2sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutTopBar">
+
+        <com.ccx.islamic.kids.littledeenapp.ui.customViews.PixelGridView
+            android:id="@+id/targetGridView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_4sdp" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Interactive Coloring Grid Stage -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardInteractiveGrid"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/_14sdp"
+        android:layout_marginVertical="@dimen/_10sdp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="@dimen/_24sdp"
+        app:cardElevation="@dimen/_5sdp"
+        app:strokeColor="@color/color_border"
+        app:strokeWidth="@dimen/_1sdp"
+        app:layout_constraintBottom_toTopOf="@+id/layoutColorPaletteContainer"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardTargetPreview">
+
+        <com.ccx.islamic.kids.littledeenapp.ui.customViews.PixelGridView
+            android:id="@+id/interactiveGridView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_10sdp" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Dynamic Palette Swatches Row -->
+    <HorizontalScrollView
+        android:id="@+id/layoutColorPaletteContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingHorizontal="@dimen/_14sdp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@+id/layoutBottomNavigation">
+
+        <LinearLayout
+            android:id="@+id/layoutColorPalette"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingVertical="@dimen/_6sdp" />
+    </HorizontalScrollView>
+
+    <!-- Bottom Next / Prev Controls -->
+    <LinearLayout
+        android:id="@+id/layoutBottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/_14sdp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPrevModel"
+            style="@style/TextAppearance.LittleDeen.H4"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_42sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:backgroundTint="#F5F5F5"
+            android:text="← Prev"
+            android:textAllCaps="false"
+            android:textColor="@color/color_text_primary"
+            app:cornerRadius="@dimen/_14sdp"
+            app:elevation="0dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNextModel"
+            style="@style/TextAppearance.LittleDeen.H4"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_42sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:backgroundTint="@color/color_primary"
+            android:text="Next →"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:cornerRadius="@dimen/_14sdp"
+            app:elevation="@dimen/_2sdp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

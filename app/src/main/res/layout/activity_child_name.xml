@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg_app">
+
+    <!-- Top Audio Toggle Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardAudioToggle"
+        android:layout_width="@dimen/_38sdp"
+        android:layout_height="@dimen/_38sdp"
+        android:layout_marginTop="@dimen/_14sdp"
+        android:layout_marginEnd="@dimen/_18sdp"
+        app:cardBackgroundColor="@color/color_surface"
+        app:cardCornerRadius="@dimen/_19sdp"
+        app:cardElevation="@dimen/_3sdp"
+        app:strokeColor="@color/color_primary_light"
+        app:strokeWidth="@dimen/_1sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivAudioToggle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Toggle Audio"
+            android:padding="@dimen/_8sdp"
+            android:src="@drawable/ic_volume_up"
+            app:tint="@color/color_primary" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Header Title -->
+    <TextView
+        android:id="@+id/tvHeading"
+        style="@style/TextAppearance.LittleDeen.H2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:gravity="center"
+        android:text="@string/child_name_heading"
+        android:textColor="@color/color_primary"
+        android:textSize="@dimen/_22ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardAudioToggle" />
+
+    <!-- Subtitle -->
+    <TextView
+        android:id="@+id/tvSubHeading"
+        style="@style/TextAppearance.LittleDeen.P4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:gravity="center"
+        android:text="@string/child_avatar_subheading"
+        android:textColor="@color/color_text_secondary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHeading" />
+
+    <!-- BIG ACTIVE AVATAR PREVIEW + CAMERA BUTTON -->
+    <FrameLayout
+        android:id="@+id/flHeroAvatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSubHeading">
+
+        <!-- Outer Glowing Ring -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="@dimen/_96sdp"
+            android:layout_height="@dimen/_96sdp"
+            app:cardBackgroundColor="@color/color_primary_light"
+            app:cardCornerRadius="@dimen/_48sdp"
+            app:cardElevation="@dimen/_6sdp"
+            app:strokeColor="@color/color_primary"
+            app:strokeWidth="@dimen/_2sdp">
+
+            <ImageView
+                android:id="@+id/ivHeroAvatar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="Selected Avatar"
+                android:scaleType="centerCrop"
+                android:src="@drawable/avatar_boy_1" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Floating Camera / Gallery Action Button -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardPickCustomPhoto"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="@color/color_primary"
+            app:cardCornerRadius="@dimen/_16sdp"
+            app:cardElevation="@dimen/_6sdp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="false"
+                android:focusable="false"
+                android:contentDescription="Upload Photo"
+                android:padding="@dimen/_7sdp"
+                android:src="@drawable/ic_camera"
+                app:tint="@color/white" />
+        </com.google.android.material.card.MaterialCardView>
+
+    </FrameLayout>
+
+    <!-- Horizontal Avatar Selection Strip -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAvatars"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:overScrollMode="never"
+        android:paddingHorizontal="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/flHeroAvatar" />
+
+    <!-- Name Input Field -->
+    <EditText
+        android:id="@+id/etChildName"
+        style="@style/TextAppearance.LittleDeen.H4"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_48sdp"
+        android:layout_marginHorizontal="@dimen/_24sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:background="@drawable/bg_input_field"
+        android:elevation="@dimen/_2sdp"
+        android:gravity="center"
+        android:hint="@string/child_name_hint"
+        android:imeOptions="actionDone"
+        android:inputType="textCapWords|textPersonName"
+        android:maxLines="1"
+        android:paddingHorizontal="@dimen/_16sdp"
+        android:textColor="@color/color_text_primary"
+        android:textColorHint="@color/color_text_tertiary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rvAvatars" />
+
+    <!-- Parent Hint Subtext -->
+    <TextView
+        android:id="@+id/tvHelpParent"
+        style="@style/TextAppearance.LittleDeen.P5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:gravity="center"
+        android:text="@string/child_name_help_parent"
+        android:textColor="@color/color_text_secondary"
+        app:layout_constraintEnd_toEndOf="@id/etChildName"
+        app:layout_constraintStart_toStartOf="@id/etChildName"
+        app:layout_constraintTop_toBottomOf="@id/etChildName" />
+
+    <!-- Continue Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnContinue"
+        style="@style/TextAppearance.LittleDeen.H4"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginHorizontal="@dimen/_24sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:backgroundTint="@color/color_primary"
+        android:text="@string/btn_continue"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:cornerRadius="@dimen/_16sdp"
+        app:elevation="@dimen/_4sdp"
+        app:rippleColor="#33FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

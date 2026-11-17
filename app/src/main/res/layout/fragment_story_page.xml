@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg_app"
+    android:clipToPadding="false"
+    android:fillViewport="true"
+    android:overScrollMode="never">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/_14sdp"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_36sdp">
+
+        <!-- ============================================== -->
+        <!-- 1. HERO STORY ILLUSTRATION CARD               -->
+        <!-- ============================================== -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_200sdp"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="@dimen/_26sdp"
+            app:cardElevation="@dimen/_5sdp"
+            app:strokeColor="@color/color_border"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- Real illustration -->
+                <ImageView
+                    android:id="@+id/ivStoryIllustration"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="Story Art"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/avatar_boy_1"
+                    tools:src="@drawable/story_1" />
+
+                <!-- Bottom Shadow Gradient Overlay -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/bg_grad_transparent_bottom" />
+
+                <!-- Decorative corner tag icon -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="@dimen/_32sdp"
+                    android:layout_height="@dimen/_32sdp"
+                    android:layout_gravity="top|end"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    app:cardBackgroundColor="#66000000"
+                    app:cardCornerRadius="@dimen/_16sdp"
+                    app:cardElevation="0dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="📖"
+                        android:textSize="@dimen/_13ssp" />
+                </com.google.android.material.card.MaterialCardView>
+            </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ============================================== -->
+        <!-- 2. TITLE, THEME & AUDIO BAR                   -->
+        <!-- ============================================== -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="@dimen/_22sdp"
+            app:cardElevation="@dimen/_3sdp"
+            app:strokeColor="@color/color_border"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/_14sdp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <!-- Theme Chip -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_4sdp"
+                        app:cardBackgroundColor="#FCE4EC"
+                        app:cardCornerRadius="@dimen/_8sdp"
+                        app:cardElevation="0dp">
+
+                        <TextView
+                            android:id="@+id/tvStoryTheme"
+                            style="@style/TextAppearance.LittleDeen.P5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="@dimen/_8sdp"
+                            android:paddingVertical="@dimen/_3sdp"
+                            android:textColor="#C2185B"
+                            android:textSize="@dimen/_8ssp"
+                            android:textStyle="bold"
+                            android:text="Honesty &amp; Truthfulness" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/tvStoryTitle"
+                        style="@style/TextAppearance.LittleDeen.H2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_text_primary"
+                        android:textSize="@dimen/_16ssp"
+                        android:text="1. The Honest Merchant" />
+                </LinearLayout>
+
+                <!-- Voice Listen Action Button -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnReadToMe"
+                    android:layout_width="@dimen/_48sdp"
+                    android:layout_height="@dimen/_48sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    app:cardBackgroundColor="@color/color_primary"
+                    app:cardCornerRadius="@dimen/_24sdp"
+                    app:cardElevation="@dimen/_5sdp"
+                    app:strokeColor="@color/white"
+                    app:strokeWidth="@dimen/_2sdp">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="🔊"
+                            android:textSize="@dimen/_18ssp" />
+                    </FrameLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ============================================== -->
+        <!-- 3. MAIN STORY BOOK TEXT CONTENT               -->
+        <!-- ============================================== -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="@dimen/_22sdp"
+            app:cardElevation="@dimen/_3sdp"
+            app:strokeColor="@color/color_border"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_16sdp"
+                android:paddingVertical="@dimen/_16sdp">
+
+                <!-- Little reader decorative badge -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📜"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <TextView
+                        style="@style/TextAppearance.LittleDeen.H4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_6sdp"
+                        android:text="Story Tale"
+                        android:textColor="@color/color_primary"
+                        android:textSize="@dimen/_12ssp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_12sdp"
+                    android:background="@color/color_border" />
+
+                <TextView
+                    android:id="@+id/tvStoryContent"
+                    style="@style/TextAppearance.LittleDeen.P4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="@dimen/_6sdp"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="@dimen/_12ssp"
+                    android:text="Ahmad loved helping his father at their small fruit shop in the city market..." />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ============================================== -->
+        <!-- 4. MORAL LESSON CARD                          -->
+        <!-- ============================================== -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_14sdp"
+            app:cardBackgroundColor="#F1F8E9"
+            app:cardCornerRadius="@dimen/_22sdp"
+            app:cardElevation="@dimen/_2sdp"
+            app:strokeColor="#C8E6C9"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_14sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="💡"
+                        android:textSize="@dimen/_15ssp" />
+
+                    <TextView
+                        style="@style/TextAppearance.LittleDeen.H4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_6sdp"
+                        android:text="Moral Lesson"
+                        android:textColor="#2E7D32"
+                        android:textSize="@dimen/_13ssp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvStoryMoral"
+                    style="@style/TextAppearance.LittleDeen.P5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:lineSpacingExtra="@dimen/_4sdp"
+                    android:textColor="#1B5E20"
+                    android:textSize="@dimen/_11ssp"
+                    android:text="Being honest means doing the right thing even when it is difficult." />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ============================================== -->
+        <!-- 5. ISLAMIC TEACHING / SUNNAH CARD             -->
+        <!-- ============================================== -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:cardBackgroundColor="#E8EAF6"
+            app:cardCornerRadius="@dimen/_22sdp"
+            app:cardElevation="@dimen/_2sdp"
+            app:strokeColor="#C5CAE9"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_14sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🕋"
+                        android:textSize="@dimen/_15ssp" />
+
+                    <TextView
+                        style="@style/TextAppearance.LittleDeen.H4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_6sdp"
+                        android:text="Islamic Teaching"
+                        android:textColor="#283593"
+                        android:textSize="@dimen/_13ssp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvStoryTeaching"
+                    style="@style/TextAppearance.LittleDeen.P5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:lineSpacingExtra="@dimen/_4sdp"
+                    android:textColor="#1A237E"
+                    android:textSize="@dimen/_11ssp"
+                    android:text="The Prophet Muhammad ﷺ said: “Truthfulness leads to righteousness.”" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

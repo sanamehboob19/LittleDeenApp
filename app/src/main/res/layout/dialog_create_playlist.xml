@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    app:cardBackgroundColor="@color/color_surface"
+    app:cardCornerRadius="@dimen/_24sdp"
+    app:cardElevation="@dimen/_10sdp"
+    app:strokeColor="@color/color_border"
+    app:strokeWidth="@dimen/_1sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/_18sdp"
+        android:paddingTop="@dimen/_16sdp"
+        android:paddingBottom="@dimen/_20sdp">
+
+        <!-- Cute Folder Icon Badge -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="@dimen/_52sdp"
+            android:layout_height="@dimen/_52sdp"
+            app:cardBackgroundColor="@color/color_primary_light"
+            app:cardCornerRadius="@dimen/_26sdp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/color_primary"
+            app:strokeWidth="@dimen/_2sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="📂"
+                android:textSize="@dimen/_24ssp" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            style="@style/TextAppearance.LittleDeen.H3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="Create Custom Playlist"
+            android:textColor="@color/color_text_primary"
+            android:textSize="@dimen/_16ssp" />
+
+        <TextView
+            style="@style/TextAppearance.LittleDeen.P5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:text="Organize favorite videos for your child"
+            android:textColor="@color/color_text_secondary"
+            android:textSize="@dimen/_10ssp" />
+
+        <!-- Playlist Name Input Field -->
+        <EditText
+            android:id="@+id/etPlaylistName"
+            style="@style/TextAppearance.LittleDeen.H4"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_46sdp"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:background="@drawable/bg_input_field"
+            android:hint="e.g. Bedtime Stories"
+            android:inputType="textCapWords"
+            android:maxLines="1"
+            android:paddingHorizontal="@dimen/_14sdp"
+            android:textColor="@color/color_text_primary"
+            android:textColorHint="@color/color_text_tertiary"
+            android:textSize="@dimen/_12ssp" />
+
+        <!-- Buttons Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCancelCreate"
+                style="@style/TextAppearance.LittleDeen.H5"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_44sdp"
+                android:layout_marginEnd="@dimen/_6sdp"
+                android:layout_weight="1"
+                android:backgroundTint="#F5F5F5"
+                android:text="Cancel"
+                android:textAllCaps="false"
+                android:textColor="@color/color_text_primary"
+                app:cornerRadius="@dimen/_14sdp"
+                app:elevation="0dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnConfirmCreate"
+                style="@style/TextAppearance.LittleDeen.H4"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_44sdp"
+                android:layout_marginStart="@dimen/_6sdp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/color_primary"
+                android:text="Create"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:cornerRadius="@dimen/_14sdp"
+                app:elevation="@dimen/_2sdp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

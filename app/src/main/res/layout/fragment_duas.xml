@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg_app">
+
+    <!-- 🎯 Pull-to-Refresh Wrapper -->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshDuas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/_14sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_75sdp">
+
+            <!-- ============================================== -->
+            <!-- TOP DUA HERO BANNER (Premium deep-green gradient) -->
+            <!-- ============================================== -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardDuasHeroBanner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#1B5E20"
+                app:cardCornerRadius="@dimen/_28sdp"
+                app:cardElevation="@dimen/_8sdp"
+                app:strokeColor="#FFD54F"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <FrameLayout
+                    android:id="@+id/flDuasBannerBg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_grad_parents">
+
+                    <!-- Decorative circles -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
+                        android:layout_gravity="end|top"
+                        android:layout_marginTop="-48dp"
+                        android:layout_marginEnd="-36dp"
+                        app:cardBackgroundColor="#1FFFFFFF"
+                        app:cardCornerRadius="70dp"
+                        app:cardElevation="0dp" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_gravity="start|bottom"
+                        android:layout_marginStart="-30dp"
+                        android:layout_marginBottom="-34dp"
+                        app:cardBackgroundColor="#33FFD54F"
+                        app:cardCornerRadius="45dp"
+                        app:cardElevation="0dp" />
+
+                    <!-- Floating sparkles -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top|center_horizontal"
+                        android:layout_marginStart="@dimen/_30sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:alpha="0.9"
+                        android:text="🌙"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:layout_marginStart="@dimen/_70sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:alpha="0.8"
+                        android:text="✨"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/_16sdp"
+                        android:paddingVertical="@dimen/_16sdp">
+
+                        <!-- Left Text Content -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_12sdp"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/cardAvatarRing"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_6sdp"
+                                app:cardBackgroundColor="#FFD54F"
+                                app:cardCornerRadius="@dimen/_10sdp"
+                                app:cardElevation="@dimen/_2sdp">
+
+                                <TextView
+                                    style="@style/TextAppearance.LittleDeen.P5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingHorizontal="@dimen/_8sdp"
+                                    android:paddingVertical="@dimen/_2sdp"
+                                    android:text="🌟 DAILY DUAS"
+                                    android:textColor="#3E2723"
+                                    android:textSize="@dimen/_8ssp"
+                                    android:textStyle="bold" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <TextView
+                                style="@style/TextAppearance.LittleDeen.H2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Daily Duas\nfor a Happy Life"
+                                android:textColor="#FFFFFF"
+                                android:textSize="@dimen/_19ssp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_8sdp"
+                                android:orientation="horizontal">
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    app:cardBackgroundColor="#33FFFFFF"
+                                    app:cardCornerRadius="@dimen/_9sdp"
+                                    app:cardElevation="0dp">
+
+                                    <TextView
+                                        style="@style/TextAppearance.LittleDeen.P5"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="@dimen/_7sdp"
+                                        android:paddingVertical="@dimen/_2sdp"
+                                        android:text="📖 Learn"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="@dimen/_9ssp" />
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_4sdp"
+                                    app:cardBackgroundColor="#33FFFFFF"
+                                    app:cardCornerRadius="@dimen/_9sdp"
+                                    app:cardElevation="0dp">
+
+                                    <TextView
+                                        style="@style/TextAppearance.LittleDeen.P5"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="@dimen/_2sdp"
+                                        android:paddingVertical="@dimen/_2sdp"
+                                        android:text=""
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="@dimen/_9ssp" />
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_4sdp"
+                                    app:cardBackgroundColor="#33FFFFFF"
+                                    app:cardCornerRadius="@dimen/_9sdp"
+                                    app:cardElevation="0dp">
+
+                                    <TextView
+                                        style="@style/TextAppearance.LittleDeen.P5"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="@dimen/_7sdp"
+                                        android:paddingVertical="@dimen/_2sdp"
+                                        android:text="🎧 Listen"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="@dimen/_9ssp" />
+                                </com.google.android.material.card.MaterialCardView>
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- Glow halo behind avatar (centered on the avatar) -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="@dimen/_84sdp"
+                            android:layout_height="@dimen/_84sdp"
+                            app:cardBackgroundColor="#33FFD54F"
+                            app:cardCornerRadius="@dimen/_42sdp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="#66FFFFFF"
+                            app:strokeWidth="@dimen/_1sdp"
+                            app:layout_constraintBottom_toBottomOf="@id/cardAvatarRing"
+                            app:layout_constraintEnd_toEndOf="@id/cardAvatarRing"
+                            app:layout_constraintStart_toStartOf="@id/cardAvatarRing"
+                            app:layout_constraintTop_toTopOf="@id/cardAvatarRing" />
+
+                        <!-- Right: Circular Avatar with Glow Ring (Matches Home Screen) -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardAvatarRing"
+                            android:layout_width="@dimen/_70sdp"
+                            android:layout_height="@dimen/_70sdp"
+                            android:layout_marginEnd="@dimen/_6sdp"
+                            app:cardBackgroundColor="@color/color_surface"
+                            app:cardCornerRadius="@dimen/_35sdp"
+                            app:cardElevation="@dimen/_8sdp"
+                            app:strokeColor="#FFD54F"
+                            app:strokeWidth="@dimen/_3sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/ivDuasHeroAvatar"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:contentDescription="Child Avatar"
+                                android:scaleType="centerCrop"
+                                tools:src="@drawable/avatar_girl_1" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- SECTION HEADER -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextAppearance.LittleDeen.H3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🤲 All Duas &amp; Supplications"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="@dimen/_16ssp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_2sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:background="@color/color_primary_light" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:text="🌈"
+                    android:textSize="@dimen/_15ssp" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/TextAppearance.LittleDeen.P5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="Tap a dua to learn it, listen and practice!"
+                android:textColor="@color/color_text_secondary"
+                android:textSize="@dimen/_10ssp" />
+
+            <!-- DUAS LIST RECYCLERVIEW -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvDuas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

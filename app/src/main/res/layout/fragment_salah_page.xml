@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:fillViewport="true"
+    android:overScrollMode="never">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/_14sdp"
+        android:paddingTop="@dimen/_6sdp"
+        android:paddingBottom="@dimen/_30sdp">
+
+        <!-- Posture Illustration Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardIllustration"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_160sdp"
+            app:cardBackgroundColor="@color/color_primary_light"
+            app:cardCornerRadius="@dimen/_24sdp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/color_primary"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <ImageView
+                android:id="@+id/ivPostureIllustration"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="Posture Illustration"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/avatar_boy_1" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Title & Instruction Description -->
+        <TextView
+            android:id="@+id/tvStepTitle"
+            style="@style/TextAppearance.LittleDeen.H2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:textColor="@color/color_text_primary"
+            android:textSize="@dimen/_18ssp"
+            tools:text="2. Qiyam (Standing &amp; Niyyah)" />
+
+        <TextView
+            android:id="@+id/tvStepDescription"
+            style="@style/TextAppearance.LittleDeen.P4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:lineSpacingExtra="@dimen/_4sdp"
+            android:textColor="@color/color_text_secondary"
+            android:textSize="@dimen/_12ssp"
+            tools:text="Stand facing the Qiblah (Kaaba). Raise your hands to your ears and say Takbeer to begin your prayer." />
+
+        <!-- Arabic Recitation Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_14sdp"
+            app:cardBackgroundColor="#FFF8E1"
+            app:cardCornerRadius="@dimen/_20sdp"
+            app:cardElevation="@dimen/_2sdp"
+            app:strokeColor="#FFE082"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_16sdp">
+
+                <TextView
+                    android:id="@+id/tvArabicRecitation"
+                    style="@style/TextAppearance.LittleDeen.H2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:lineSpacingExtra="@dimen/_6sdp"
+                    android:textColor="#E65100"
+                    android:textSize="@dimen/_18ssp"
+                    tools:text="اللَّهُ أَكْبَرُ" />
+
+                <TextView
+                    android:id="@+id/tvTransliteration"
+                    style="@style/TextAppearance.LittleDeen.P5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:gravity="center"
+                    android:textColor="#F57C00"
+                    android:textSize="@dimen/_11ssp"
+                    android:textStyle="italic"
+                    tools:text="Allahu Akbar" />
+
+                <!-- Listen Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnListenAudio"
+                    style="@style/TextAppearance.LittleDeen.H5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:backgroundTint="@color/color_primary"
+                    android:text="🔊 Listen &amp; Learn"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    app:cornerRadius="@dimen/_14sdp"
+                    app:elevation="@dimen/_2sdp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

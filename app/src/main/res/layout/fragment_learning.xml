@@ -1,0 +1,715 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg_app">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Inner container holds all screen padding safely -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/_14sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_75sdp">
+
+            <!-- ============================================== -->
+            <!-- TOP HERO BANNER (Dynamic Theme color)          -->
+            <!-- ============================================== -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardLearningHeroBanner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/color_primary"
+                app:cardCornerRadius="@dimen/_28sdp"
+                app:cardElevation="@dimen/_8sdp"
+                app:strokeColor="@color/color_primary_light"
+                app:strokeWidth="@dimen/_2sdp">
+
+                <FrameLayout
+                    android:id="@+id/flLearningBannerBg"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_140sdp"
+                    android:background="@color/color_primary">
+
+                    <!-- Decorative glass circles -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="end|top"
+                        android:layout_marginTop="-50dp"
+                        android:layout_marginEnd="-36dp"
+                        app:cardBackgroundColor="#26FFFFFF"
+                        app:cardCornerRadius="75dp"
+                        app:cardElevation="0dp" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="start|bottom"
+                        android:layout_marginStart="-34dp"
+                        android:layout_marginBottom="-40dp"
+                        app:cardBackgroundColor="#1FFFFFFF"
+                        app:cardCornerRadius="50dp"
+                        app:cardElevation="0dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|top"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_60sdp"
+                        android:alpha="0.85"
+                        android:text="🌙"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|bottom"
+                        android:layout_marginEnd="@dimen/_16sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:alpha="0.85"
+                        android:text="⭐"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="@dimen/_16sdp">
+
+                        <!-- Left Text Content -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.3"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_6sdp"
+                                app:cardBackgroundColor="#FFFFFF"
+                                app:cardCornerRadius="@dimen/_10sdp"
+                                app:cardElevation="@dimen/_2sdp">
+
+                                <TextView
+                                    style="@style/TextAppearance.LittleDeen.P5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingHorizontal="@dimen/_8sdp"
+                                    android:paddingVertical="@dimen/_2sdp"
+                                    android:text="🎓 LITTLE DEEN ACADEMY"
+                                    android:textColor="@color/color_primary"
+                                    android:textSize="@dimen/_8ssp"
+                                    android:textStyle="bold" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <TextView
+                                style="@style/TextAppearance.LittleDeen.H2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Learn Grow in Deen ✨"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_18ssp" />
+
+                            <TextView
+                                style="@style/TextAppearance.LittleDeen.P5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:text="Explore daily Islamic knowledge &amp; growth"
+                                android:textColor="#F0FFF6"
+                                android:textSize="@dimen/_10ssp" />
+                        </LinearLayout>
+
+                        <!-- Right Illustration Icon Badge with halo -->
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="@dimen/_74sdp"
+                                android:layout_height="@dimen/_74sdp"
+                                android:layout_gravity="center"
+                                app:cardBackgroundColor="#33FFFFFF"
+                                app:cardCornerRadius="@dimen/_37sdp"
+                                app:cardElevation="0dp"
+                                app:strokeColor="#66FFFFFF"
+                                app:strokeWidth="@dimen/_1sdp" />
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="@dimen/_60sdp"
+                                android:layout_height="@dimen/_60sdp"
+                                android:layout_gravity="center"
+                                app:cardBackgroundColor="#FFFFFF"
+                                app:cardCornerRadius="@dimen/_30sdp"
+                                app:cardElevation="@dimen/_8sdp"
+                                app:strokeColor="#FFD54F"
+                                app:strokeWidth="@dimen/_3sdp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="🕌"
+                                    android:textSize="@dimen/_28ssp" />
+                            </com.google.android.material.card.MaterialCardView>
+                        </FrameLayout>
+
+                    </LinearLayout>
+                </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ============================================== -->
+            <!-- SECTION HEADER: ISLAMIC LEARNING MODULES       -->
+            <!-- ============================================== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextAppearance.LittleDeen.H3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🌟 Islamic Learning Modules"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="@dimen/_16ssp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_2sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:background="@color/color_primary_light" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/TextAppearance.LittleDeen.P5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="Tap any lesson to start learning 🚀"
+                android:textColor="@color/color_text_secondary"
+                android:textSize="@dimen/_10ssp" />
+
+            <!-- ============================================== -->
+            <!-- 1. DIGITAL TASBEEH COUNTER CARD (Opens Activity)-->
+            <!-- ============================================== -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardLearningTasbeeh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                app:cardBackgroundColor="#E8F5E9"
+                app:cardCornerRadius="@dimen/_24sdp"
+                app:cardElevation="@dimen/_5sdp"
+                app:strokeColor="#81C784"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_grad_cat_stories">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_gravity="end|top"
+                        android:layout_marginTop="-34dp"
+                        android:layout_marginEnd="-24dp"
+                        app:cardBackgroundColor="#4DFFFFFF"
+                        app:cardCornerRadius="45dp"
+                        app:cardElevation="0dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_14sdp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="@dimen/_52sdp"
+                            android:layout_height="@dimen/_52sdp"
+                            app:cardBackgroundColor="#FFFFFF"
+                            app:cardCornerRadius="@dimen/_26sdp"
+                            app:cardElevation="@dimen/_4sdp"
+                            app:strokeColor="#A5D6A7"
+                            app:strokeWidth="@dimen/_2sdp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="📿"
+                                android:textSize="@dimen/_24ssp" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/TextAppearance.LittleDeen.H3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Kids Digital Tasbeeh"
+                                android:textColor="#1B5E20"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <TextView
+                                style="@style/TextAppearance.LittleDeen.P5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:text="SubhanAllah, Alhamdulillah,Allahu Akbar more"
+                                android:textColor="@color/color_text_secondary"
+                                android:textSize="@dimen/_10ssp" />
+                        </LinearLayout>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_marginStart="@dimen/_6sdp"
+                            app:cardBackgroundColor="#FFFFFF"
+                            app:cardCornerRadius="@dimen/_15sdp"
+                            app:cardElevation="@dimen/_3sdp">
+
+                            <TextView
+                                style="@style/TextAppearance.LittleDeen.H3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="›"
+                                android:textColor="#2E7D32"
+                                android:textSize="@dimen/_20ssp" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ============================================== -->
+            <!-- 2. THE 6 KALIMAS CARD                          -->
+            <!-- ============================================== -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardLearningKalimas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:cardBackgroundColor="#EDE7F6"
+                app:cardCornerRadius="@dimen/_24sdp"
+                app:cardElevation="@dimen/_5sdp"
+                app:strokeColor="#B39DDB"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_grad_cat_videos">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_gravity="end|top"
+                        android:layout_marginTop="-34dp"
+                        android:layout_marginEnd="-24dp"
+                        app:cardBackgroundColor="#4DFFFFFF"
+                        app:cardCornerRadius="45dp"
+                        app:cardElevation="0dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_14sdp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="@dimen/_52sdp"
+                            android:layout_height="@dimen/_52sdp"
+                            app:cardBackgroundColor="#FFFFFF"
+                            app:cardCornerRadius="@dimen/_26sdp"
+                            app:cardElevation="@dimen/_4sdp"
+                            app:strokeColor="#C5B3EE"
+                            app:strokeWidth="@dimen/_2sdp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="📜"
+                                android:textSize="@dimen/_24ssp" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/TextAppearance.LittleDeen.H3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="The 6 Kalimas"
+                                android:textColor="#4527A0"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <TextView
+                                style="@style/TextAppearance.LittleDeen.P5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:text="With Arabic audio, Urdu English translations"
+                                android:textColor="@color/color_text_secondary"
+                                android:textSize="@dimen/_10ssp" />
+                        </LinearLayout>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_marginStart="@dimen/_6sdp"
+                            app:cardBackgroundColor="#FFFFFF"
+                            app:cardCornerRadius="@dimen/_15sdp"
+                            app:cardElevation="@dimen/_3sdp">
+
+                            <TextView
+                                style="@style/TextAppearance.LittleDeen.H3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="›"
+                                android:textColor="#5E35B1"
+                                android:textSize="@dimen/_20ssp" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ============================================== -->
+            <!-- 3. SHORT SURAHS & 4 QULS CARD                  -->
+            <!-- ============================================== -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardLearningSurahs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:cardBackgroundColor="#FFF3E0"
+                app:cardCornerRadius="@dimen/_24sdp"
+                app:cardElevation="@dimen/_5sdp"
+                app:strokeColor="#FFB74D"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_grad_cat_duas">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_gravity="end|top"
+                        android:layout_marginTop="-34dp"
+                        android:layout_marginEnd="-24dp"
+                        app:cardBackgroundColor="#4DFFFFFF"
+                        app:cardCornerRadius="45dp"
+                        app:cardElevation="0dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_14sdp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="@dimen/_52sdp"
+                            android:layout_height="@dimen/_52sdp"
+                            app:cardBackgroundColor="#FFFFFF"
+                            app:cardCornerRadius="@dimen/_26sdp"
+                            app:cardElevation="@dimen/_4sdp"
+                            app:strokeColor="#FFCC80"
+                            app:strokeWidth="@dimen/_2sdp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="📖"
+                                android:textSize="@dimen/_24ssp" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/TextAppearance.LittleDeen.H3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Short Surahs 4 Quls"
+                                android:textColor="#D84315"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <TextView
+                                style="@style/TextAppearance.LittleDeen.P5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:text="Surah Al-Fatiha, Al-Ikhlas protection surahs"
+                                android:textColor="@color/color_text_secondary"
+                                android:textSize="@dimen/_10ssp" />
+                        </LinearLayout>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_marginStart="@dimen/_6sdp"
+                            app:cardBackgroundColor="#FFFFFF"
+                            app:cardCornerRadius="@dimen/_15sdp"
+                            app:cardElevation="@dimen/_3sdp">
+
+                            <TextView
+                                style="@style/TextAppearance.LittleDeen.H3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="›"
+                                android:textColor="#E65100"
+                                android:textSize="@dimen/_20ssp" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ============================================== -->
+            <!-- 4. STEP-BY-STEP SALAH (PRAYER) GUIDE CARD      -->
+            <!-- ============================================== -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardLearningSalah"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:cardBackgroundColor="#E0F2F1"
+                app:cardCornerRadius="@dimen/_24sdp"
+                app:cardElevation="@dimen/_5sdp"
+                app:strokeColor="#80CBC4"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_grad_cat_quiz">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_gravity="end|top"
+                        android:layout_marginTop="-34dp"
+                        android:layout_marginEnd="-24dp"
+                        app:cardBackgroundColor="#4DFFFFFF"
+                        app:cardCornerRadius="45dp"
+                        app:cardElevation="0dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_14sdp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="@dimen/_52sdp"
+                            android:layout_height="@dimen/_52sdp"
+                            app:cardBackgroundColor="#FFFFFF"
+                            app:cardCornerRadius="@dimen/_26sdp"
+                            app:cardElevation="@dimen/_4sdp"
+                            app:strokeColor="#B2DFDB"
+                            app:strokeWidth="@dimen/_2sdp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="🕌"
+                                android:textSize="@dimen/_24ssp" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/TextAppearance.LittleDeen.H3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Learn Salah (Prayer)"
+                                android:textColor="#00695C"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <TextView
+                                style="@style/TextAppearance.LittleDeen.P5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:text="Wudu steps visual prayer postures for kids"
+                                android:textColor="@color/color_text_secondary"
+                                android:textSize="@dimen/_10ssp" />
+                        </LinearLayout>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_marginStart="@dimen/_6sdp"
+                            app:cardBackgroundColor="#FFFFFF"
+                            app:cardCornerRadius="@dimen/_15sdp"
+                            app:cardElevation="@dimen/_3sdp">
+
+                            <TextView
+                                style="@style/TextAppearance.LittleDeen.H3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="›"
+                                android:textColor="#00796B"
+                                android:textSize="@dimen/_20ssp" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ============================================== -->
+            <!-- 5. PROPHET & MORAL STORIES CARD                -->
+            <!-- ============================================== -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardLearningStories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:cardBackgroundColor="#FCE4EC"
+                app:cardCornerRadius="@dimen/_24sdp"
+                app:cardElevation="@dimen/_5sdp"
+                app:strokeColor="#F48FB1"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_grad_cat_drawing">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_gravity="end|top"
+                        android:layout_marginTop="-34dp"
+                        android:layout_marginEnd="-24dp"
+                        app:cardBackgroundColor="#4DFFFFFF"
+                        app:cardCornerRadius="45dp"
+                        app:cardElevation="0dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_14sdp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="@dimen/_52sdp"
+                            android:layout_height="@dimen/_52sdp"
+                            app:cardBackgroundColor="#FFFFFF"
+                            app:cardCornerRadius="@dimen/_26sdp"
+                            app:cardElevation="@dimen/_4sdp"
+                            app:strokeColor="#F8BBD0"
+                            app:strokeWidth="@dimen/_2sdp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="📚"
+                                android:textSize="@dimen/_24ssp" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/TextAppearance.LittleDeen.H3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Moral Stories"
+                                android:textColor="#AD1457"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <TextView
+                                style="@style/TextAppearance.LittleDeen.P5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:text="Inspiring Sunnah lessons, honesty manners"
+                                android:textColor="@color/color_text_secondary"
+                                android:textSize="@dimen/_10ssp" />
+                        </LinearLayout>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_marginStart="@dimen/_6sdp"
+                            app:cardBackgroundColor="#FFFFFF"
+                            app:cardCornerRadius="@dimen/_15sdp"
+                            app:cardElevation="@dimen/_3sdp">
+
+                            <TextView
+                                style="@style/TextAppearance.LittleDeen.H3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="›"
+                                android:textColor="#C2185B"
+                                android:textSize="@dimen/_20ssp" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

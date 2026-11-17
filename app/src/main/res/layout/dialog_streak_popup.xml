@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/_270sdp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    app:cardBackgroundColor="@color/color_surface"
+    app:cardCornerRadius="@dimen/_28sdp"
+    app:cardElevation="@dimen/_12sdp"
+    app:strokeColor="#FFE082"
+    app:strokeWidth="@dimen/_2sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_grad_streak"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/_20sdp"
+        android:paddingTop="@dimen/_20sdp"
+        android:paddingBottom="@dimen/_24sdp">
+
+        <!-- Fire Emoji / Trophy Badge -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="@dimen/_68sdp"
+            android:layout_height="@dimen/_68sdp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="@dimen/_34sdp"
+            app:cardElevation="@dimen/_6sdp"
+            app:strokeColor="#FFE082"
+            app:strokeWidth="@dimen/_2sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="🔥"
+                android:textSize="@dimen/_32ssp" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Title -->
+        <TextView
+            style="@style/TextAppearance.LittleDeen.H2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:text="Awesome Streak!"
+            android:textColor="#E65100"
+            android:textSize="@dimen/_18ssp" />
+
+        <!-- Dynamic Streak Count Message -->
+        <TextView
+            android:id="@+id/tvStreakPopupMessage"
+            style="@style/TextAppearance.LittleDeen.H4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:gravity="center"
+            android:text="You are on a 3-Day Learning Streak!"
+            android:textColor="#F57C00"
+            android:textSize="@dimen/_13ssp" />
+
+        <!-- Subtitle Hint -->
+        <TextView
+            style="@style/TextAppearance.LittleDeen.P5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:gravity="center"
+            android:text="Keep learning every day to unlock rewards and trophies!"
+            android:textColor="@color/color_text_secondary"
+            android:textSize="@dimen/_10ssp" />
+
+        <!-- Continue Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAwesome"
+            style="@style/TextAppearance.LittleDeen.H4"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_44sdp"
+            android:layout_marginTop="@dimen/_18sdp"
+            android:backgroundTint="#FF9800"
+            android:text="Keep Going! 🚀"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:cornerRadius="@dimen/_16sdp"
+            app:elevation="@dimen/_2sdp" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

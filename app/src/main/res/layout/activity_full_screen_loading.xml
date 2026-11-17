@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_grad_hero">
+
+    <!-- Floating Background Sparkles -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_36sdp"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:alpha="0.7"
+        android:text="✨"
+        android:textSize="@dimen/_24ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_44sdp"
+        android:layout_marginTop="@dimen/_90sdp"
+        android:alpha="0.7"
+        android:text="🌙"
+        android:textSize="@dimen/_28ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Center Content Card -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/_24sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- ============================================== -->
+        <!-- LARGE PLAYFUL CHILD AVATAR WITH DOUBLE RING    -->
+        <!-- ============================================== -->
+        <FrameLayout
+            android:id="@+id/flAvatarGlowContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <!-- Outer Soft Glow Ring -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="@dimen/_104sdp"
+                android:layout_height="@dimen/_104sdp"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="#26FFFFFF"
+                app:cardCornerRadius="@dimen/_52sdp"
+                app:cardElevation="0dp"
+                app:strokeColor="#66FFFFFF"
+                app:strokeWidth="@dimen/_1sdp" />
+
+            <!-- Inner Avatar Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardLoadingAvatarRing"
+                android:layout_width="@dimen/_92sdp"
+                android:layout_height="@dimen/_92sdp"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="@color/color_surface"
+                app:cardCornerRadius="@dimen/_46sdp"
+                app:cardElevation="@dimen/_8sdp"
+                app:strokeColor="@color/color_primary"
+                app:strokeWidth="@dimen/_3sdp">
+
+                <!-- 🎯 Child's Real Avatar or Custom Photo -->
+                <!-- 🎯 Changed tools:src to android:src so it is never blank white -->
+                <ImageView
+                    android:id="@+id/ivLoadingAvatar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="Child Profile"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/avatar_boy_1" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Floating Star Sticker Badge -->
+            <TextView
+                android:id="@+id/tvFloatingStar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:elevation="@dimen/_10sdp"
+                android:text="⭐"
+                android:textSize="@dimen/_28ssp" />
+        </FrameLayout>
+
+        <!-- Real App Name -->
+        <TextView
+            style="@style/TextAppearance.LittleDeen.H2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:text="@string/app_name"
+            android:textColor="@color/color_primary"
+            android:textSize="@dimen/_21ssp" />
+
+        <!-- Dynamic Cycling Loading Message -->
+        <TextView
+            android:id="@+id/tvLoadingMessage"
+            style="@style/TextAppearance.LittleDeen.H4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:gravity="center"
+            android:text="Setting up your Islamic garden... 🌿"
+            android:textColor="@color/color_text_primary"
+            android:textSize="@dimen/_13ssp" />
+
+        <!-- ============================================== -->
+        <!-- MODERN ROUNDED PILL PROGRESS INDICATOR         -->
+        <!-- ============================================== -->
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progressLoading"
+            android:layout_width="@dimen/_190sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:indeterminate="true"
+            app:indicatorColor="@color/color_primary"
+            app:trackColor="@color/color_primary_light"
+            app:trackCornerRadius="@dimen/_6sdp"
+            app:trackThickness="@dimen/_10sdp" />
+
+        <!-- Footer Encouragement -->
+        <TextView
+            style="@style/TextAppearance.LittleDeen.P5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:text="Just a moment, little explorer! 🚀"
+            android:textColor="@color/color_text_secondary"
+            android:textSize="@dimen/_11ssp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

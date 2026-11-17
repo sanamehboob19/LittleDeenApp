@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <!-- 1. Fullscreen Background Image (9:16 Artwork covers entire display) -->
+    <ImageView
+        android:id="@+id/ivSlideImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="Slide Background"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/img_onboarding_4" />
+
+    <!-- 2. Smooth Dark Gradient Scrim (Bottom 55% of the screen) -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_bottom_gradient_scrim"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHeight_percent="0.60"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <!-- 3. Text Section (Title & Description positioned over the dark scrim) -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/_20sdp"
+        android:paddingBottom="@dimen/_110sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Slide Title -->
+        <TextView
+            android:id="@+id/tvSlideTitle"
+            style="@style/TextAppearance.LittleDeen.H2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shadowColor="#80000000"
+            android:shadowDx="0"
+            android:shadowDy="2"
+            android:shadowRadius="4"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_20ssp"
+            tools:text="Safe from the Wild Internet 🛡️" />
+
+        <!-- Accent Underline Pill -->
+        <View
+            android:layout_width="@dimen/_36sdp"
+            android:layout_height="@dimen/_3sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@drawable/bg_welcome_divider"
+            android:backgroundTint="@color/color_primary" />
+
+        <!-- Slide Description -->
+        <TextView
+            android:id="@+id/tvSlideDesc"
+            style="@style/TextAppearance.LittleDeen.P4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:lineSpacingExtra="@dimen/_4sdp"
+            android:shadowColor="#80000000"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:textColor="#F0F0F0"
+            android:textSize="@dimen/_11ssp"
+            tools:text="No unpredictable ads, no harmful content, and no external popups. Little Deen is a 100% escape-proof garden built to protect your child's pure heart." />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<androidx.constraintlayout.widget.ConstraintLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:background="@color/color_bg_app"-->
+<!--    android:clipChildren="false"-->
+<!--    android:clipToPadding="false">-->
+
+<!--    &lt;!&ndash; Top Content Container &ndash;&gt;-->
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/clSlideHeader"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:paddingStart="@dimen/_24sdp"-->
+<!--        android:paddingEnd="@dimen/_24sdp"-->
+<!--        android:paddingTop="@dimen/_24sdp"-->
+<!--        android:paddingBottom="@dimen/_12sdp"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent">-->
+
+<!--        &lt;!&ndash; Slide Title &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/tvSlideTitle"-->
+<!--            style="@style/TextAppearance.LittleDeen.H2"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center"-->
+<!--            android:textColor="@color/color_primary"-->
+<!--            android:textSize="@dimen/_25ssp"-->
+<!--            android:includeFontPadding="false"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent" />-->
+
+<!--        &lt;!&ndash; Decorative Divider &ndash;&gt;-->
+<!--        <View-->
+<!--            android:id="@+id/viewSlideDivider"-->
+<!--            android:layout_width="@dimen/_42sdp"-->
+<!--            android:layout_height="@dimen/_3sdp"-->
+<!--            android:layout_marginTop="@dimen/_10sdp"-->
+<!--            android:background="@drawable/bg_welcome_divider"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/tvSlideTitle"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent" />-->
+
+<!--        &lt;!&ndash; Slide Description &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/tvSlideDesc"-->
+<!--            style="@style/TextAppearance.LittleDeen.P3"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="@dimen/_10sdp"-->
+<!--            android:gravity="center"-->
+<!--            android:lineSpacingExtra="@dimen/_3sdp"-->
+<!--            android:textColor="@color/color_text_secondary"-->
+<!--            android:textSize="@dimen/_14ssp"-->
+<!--            android:includeFontPadding="false"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/viewSlideDivider"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent" />-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--    &lt;!&ndash; Full Illustration Area &ndash;&gt;-->
+<!--    <FrameLayout-->
+<!--        android:id="@+id/flSlideImageContainer"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_marginTop="@dimen/_4sdp"-->
+<!--        android:clipChildren="false"-->
+<!--        android:clipToPadding="false"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/clSlideHeader"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent">-->
+
+<!--        &lt;!&ndash; Full Size Illustration &ndash;&gt;-->
+<!--        <ImageView-->
+<!--            android:id="@+id/ivSlideImage"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:contentDescription="@null"-->
+<!--            android:scaleType="fitCenter"-->
+<!--            android:adjustViewBounds="true" />-->
+
+<!--        &lt;!&ndash; Speaker Button &ndash;&gt;-->
+<!--        <com.google.android.material.card.MaterialCardView-->
+<!--            android:layout_width="@dimen/_54sdp"-->
+<!--            android:layout_height="@dimen/_54sdp"-->
+<!--            android:visibility="gone"-->
+<!--            android:layout_gravity="bottom|end"-->
+<!--            android:layout_marginEnd="@dimen/_22sdp"-->
+<!--            android:layout_marginBottom="@dimen/_24sdp"-->
+<!--            app:cardBackgroundColor="@color/color_primary"-->
+<!--            app:cardCornerRadius="@dimen/_27sdp"-->
+<!--            app:cardElevation="@dimen/_8sdp"-->
+<!--            app:strokeColor="#66FFFFFF"-->
+<!--            app:strokeWidth="@dimen/_1sdp">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/ivSpeaker"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="?attr/selectableItemBackgroundBorderless"-->
+<!--                android:clickable="true"-->
+<!--                android:focusable="true"-->
+<!--                android:contentDescription="Listen"-->
+<!--                android:padding="@dimen/_14sdp"-->
+<!--                android:scaleType="fitCenter"-->
+<!--                android:src="@drawable/ic_speaker"-->
+<!--                app:tint="@android:color/white" />-->
+
+<!--        </com.google.android.material.card.MaterialCardView>-->
+
+<!--    </FrameLayout>-->
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->

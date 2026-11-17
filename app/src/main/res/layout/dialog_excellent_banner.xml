@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutBannerRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80000000">
+
+    <nl.dionsegijn.konfetti.xml.KonfettiView
+        android:id="@+id/konfettiView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="@dimen/_2sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutBannerContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/_8sdp"
+        android:rotation="-3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Hanging Garland String -->
+        <View
+            android:id="@+id/viewGarlandString"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_3sdp"
+            android:background="#212121"
+            app:layout_constraintBottom_toBottomOf="@+id/layoutFlagsRow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/layoutFlagsRow"
+            app:layout_constraintVertical_bias="0.08" />
+
+        <!-- 🚩 E - X - C - E - L - L - E - N - T (Colorful garland pennants) -->
+        <LinearLayout
+            android:id="@+id/layoutFlagsRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                style="@style/LargePennantLetterStyle"
+                android:background="@drawable/bg_pennant_flag"
+                android:backgroundTint="#FF1744"
+                android:text="E" />
+
+            <TextView
+                style="@style/LargePennantLetterStyle"
+                android:background="@drawable/bg_pennant_flag"
+                android:backgroundTint="#FF6D00"
+                android:text="X" />
+
+            <TextView
+                style="@style/LargePennantLetterStyle"
+                android:background="@drawable/bg_pennant_flag"
+                android:backgroundTint="#FFD600"
+                android:text="C" />
+
+            <TextView
+                style="@style/LargePennantLetterStyle"
+                android:background="@drawable/bg_pennant_flag"
+                android:backgroundTint="#00E676"
+                android:text="E" />
+
+            <TextView
+                style="@style/LargePennantLetterStyle"
+                android:background="@drawable/bg_pennant_flag"
+                android:backgroundTint="#1DE9B6"
+                android:text="L" />
+
+            <TextView
+                style="@style/LargePennantLetterStyle"
+                android:background="@drawable/bg_pennant_flag"
+                android:backgroundTint="#00B0FF"
+                android:text="L" />
+
+            <TextView
+                style="@style/LargePennantLetterStyle"
+                android:background="@drawable/bg_pennant_flag"
+                android:backgroundTint="#2979FF"
+                android:text="E" />
+
+            <TextView
+                style="@style/LargePennantLetterStyle"
+                android:background="@drawable/bg_pennant_flag"
+                android:backgroundTint="#AA00FF"
+                android:text="N" />
+
+            <TextView
+                style="@style/LargePennantLetterStyle"
+                android:background="@drawable/bg_pennant_flag"
+                android:backgroundTint="#FF4081"
+                android:text="T" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

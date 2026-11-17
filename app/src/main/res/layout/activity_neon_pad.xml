@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A0B10">
+
+    <!-- 1. DARK NEON TOP BAR -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_52sdp"
+        android:background="#12141F"
+        android:paddingHorizontal="@dimen/_12sdp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/_34sdp"
+            android:layout_height="@dimen/_34sdp"
+            app:cardBackgroundColor="#212638"
+            app:cardCornerRadius="@dimen/_17sdp"
+            app:cardElevation="0dp"
+            app:strokeColor="#3D4566"
+            app:strokeWidth="@dimen/_1sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/_8sdp"
+                android:rotation="180"
+                android:src="@drawable/ic_check"
+                app:tint="@android:color/white" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnBack"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                style="@style/TextAppearance.LittleDeen.H3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Neon Pad 🌟"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_14ssp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Glowing Laser Art"
+                android:textColor="#8F9BB3"
+                android:textSize="@dimen/_9ssp" />
+        </LinearLayout>
+
+        <!-- Right Top Actions: Rotate, Save, Share -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- Rotate Screen -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnRotateScreen"
+                android:layout_width="@dimen/_34sdp"
+                android:layout_height="@dimen/_34sdp"
+                android:layout_marginEnd="@dimen/_6sdp"
+                app:cardBackgroundColor="#212638"
+                app:cardCornerRadius="@dimen/_17sdp"
+                app:cardElevation="0dp"
+                app:strokeColor="#3D4566"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="🔄"
+                    android:textSize="@dimen/_13ssp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Save Drawing -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnSave"
+                android:layout_width="@dimen/_34sdp"
+                android:layout_height="@dimen/_34sdp"
+                android:layout_marginEnd="@dimen/_6sdp"
+                app:cardBackgroundColor="#212638"
+                app:cardCornerRadius="@dimen/_17sdp"
+                app:cardElevation="0dp"
+                app:strokeColor="#3D4566"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="💾"
+                    android:textSize="@dimen/_13ssp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Share Drawing -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnShare"
+                android:layout_width="@dimen/_34sdp"
+                android:layout_height="@dimen/_34sdp"
+                app:cardBackgroundColor="#212638"
+                app:cardCornerRadius="@dimen/_17sdp"
+                app:cardElevation="0dp"
+                app:strokeColor="#3D4566"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="↗️"
+                    android:textSize="@dimen/_13ssp" />
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 2. PITCH BLACK NEON CANVAS -->
+    <com.ccx.islamic.kids.littledeenapp.ui.customViews.DrawingView
+        android:id="@+id/drawingView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@id/bottomDock"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBar" />
+
+    <!-- 3. NEON BOTTOM CONTROL DOCK -->
+    <LinearLayout
+        android:id="@+id/bottomDock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#12141F"
+        android:elevation="@dimen/_10sdp"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/_6sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- ROW 1: Undo, Redo, Trash & Neon Slider -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/_12sdp">
+
+            <!-- Undo -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnUndo"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                app:cardBackgroundColor="#212638"
+                app:cardCornerRadius="@dimen/_16sdp"
+                app:cardElevation="0dp"
+                app:strokeColor="#3D4566"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="↩"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/_15ssp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Redo -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnRedo"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginStart="@dimen/_6sdp"
+                app:cardBackgroundColor="#212638"
+                app:cardCornerRadius="@dimen/_16sdp"
+                app:cardElevation="0dp"
+                app:strokeColor="#3D4566"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="↪"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/_15ssp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Trash / Clear -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnTrash"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginStart="@dimen/_6sdp"
+                app:cardBackgroundColor="#212638"
+                app:cardCornerRadius="@dimen/_16sdp"
+                app:cardElevation="0dp"
+                app:strokeColor="#3D4566"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="🗑"
+                    android:textSize="@dimen/_13ssp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Neon Glow Slider -->
+            <com.google.android.material.slider.Slider
+                android:id="@+id/sliderStrokeSize"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_weight="1"
+                android:stepSize="2.0"
+                android:value="20.0"
+                android:valueFrom="6.0"
+                android:valueTo="80.0"
+                app:thumbColor="#00F0FF"
+                app:trackColorActive="#00F0FF"
+                app:trackColorInactive="#2A3045" />
+        </LinearLayout>
+
+        <!-- ROW 2: Horizontal 20 High-Intensity Neon Colors -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvColors"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/_8sdp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_color_swatch" />
+
+        <!-- ROW 3: Horizontal Neon Tools -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:paddingHorizontal="@dimen/_8sdp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <!-- 1. Eraser (Cleans with pitch black) -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/toolEraser"
+                    android:layout_width="@dimen/_54sdp"
+                    android:layout_height="@dimen/_46sdp"
+                    android:layout_marginHorizontal="@dimen/_3sdp"
+                    app:cardBackgroundColor="#212638"
+                    app:cardCornerRadius="@dimen/_14sdp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="#3D4566"
+                    app:strokeWidth="@dimen/_1sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🧼"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <TextView
+                            android:id="@+id/tvToolEraser"
+                            style="@style/TextAppearance.LittleDeen.H5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_1sdp"
+                            android:text="Eraser"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_8ssp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- 2. Neon Pen -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/toolGlowPen"
+                    android:layout_width="@dimen/_54sdp"
+                    android:layout_height="@dimen/_46sdp"
+                    android:layout_marginHorizontal="@dimen/_3sdp"
+                    app:cardBackgroundColor="#00F0FF"
+                    app:cardCornerRadius="@dimen/_14sdp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="✨"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <TextView
+                            android:id="@+id/tvToolGlowPen"
+                            style="@style/TextAppearance.LittleDeen.H5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_1sdp"
+                            android:text="Neon"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/_8ssp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- 3. Neon Brush -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/toolBrush"
+                    android:layout_width="@dimen/_54sdp"
+                    android:layout_height="@dimen/_46sdp"
+                    android:layout_marginHorizontal="@dimen/_3sdp"
+                    app:cardBackgroundColor="#212638"
+                    app:cardCornerRadius="@dimen/_14sdp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="#3D4566"
+                    app:strokeWidth="@dimen/_1sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🖌️"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <TextView
+                            android:id="@+id/tvToolBrush"
+                            style="@style/TextAppearance.LittleDeen.H5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_1sdp"
+                            android:text="Brush"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_8ssp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- 4. Neon Line -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/toolLine"
+                    android:layout_width="@dimen/_54sdp"
+                    android:layout_height="@dimen/_46sdp"
+                    android:layout_marginHorizontal="@dimen/_3sdp"
+                    app:cardBackgroundColor="#212638"
+                    app:cardCornerRadius="@dimen/_14sdp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="#3D4566"
+                    app:strokeWidth="@dimen/_1sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="—"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_13ssp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvToolLine"
+                            style="@style/TextAppearance.LittleDeen.H5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_1sdp"
+                            android:text="Line"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_8ssp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- 5. Neon Rectangle -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/toolRectangle"
+                    android:layout_width="@dimen/_54sdp"
+                    android:layout_height="@dimen/_46sdp"
+                    android:layout_marginHorizontal="@dimen/_3sdp"
+                    app:cardBackgroundColor="#212638"
+                    app:cardCornerRadius="@dimen/_14sdp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="#3D4566"
+                    app:strokeWidth="@dimen/_1sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="▭"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <TextView
+                            android:id="@+id/tvToolRectangle"
+                            style="@style/TextAppearance.LittleDeen.H5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_1sdp"
+                            android:text="Rect"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_8ssp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- 6. Neon Circle -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/toolCircle"
+                    android:layout_width="@dimen/_54sdp"
+                    android:layout_height="@dimen/_46sdp"
+                    android:layout_marginHorizontal="@dimen/_3sdp"
+                    app:cardBackgroundColor="#212638"
+                    app:cardCornerRadius="@dimen/_14sdp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="#3D4566"
+                    app:strokeWidth="@dimen/_1sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="◯"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <TextView
+                            android:id="@+id/tvToolCircle"
+                            style="@style/TextAppearance.LittleDeen.H5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_1sdp"
+                            android:text="Circle"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_8ssp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ========================================== -->
+    <!-- Headings (H1 to H6) - Cooper / Berlin Font -->
+    <!-- ========================================== -->
+    <style name="TextAppearance.LittleDeen.H1" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="fontFamily">@font/cooper</item>
+        <item name="android:textSize">@dimen/_24ssp</item>
+        <item name="android:textColor">@color/color_text_primary</item>
+    </style>
+
+    <style name="TextAppearance.LittleDeen.H2" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="fontFamily">@font/cooper</item>
+        <item name="android:textSize">@dimen/_20ssp</item>
+        <item name="android:textColor">@color/color_text_primary</item>
+    </style>
+
+    <style name="TextAppearance.LittleDeen.H3" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="fontFamily">@font/cooper</item>
+        <item name="android:textSize">@dimen/_18ssp</item>
+        <item name="android:textColor">@color/color_text_primary</item>
+    </style>
+
+    <style name="TextAppearance.LittleDeen.H4" parent="TextAppearance.Material3.TitleLarge">
+        <item name="fontFamily">@font/berlin</item>
+        <item name="android:textSize">@dimen/_16ssp</item>
+        <item name="android:textColor">@color/color_text_primary</item>
+    </style>
+
+    <style name="TextAppearance.LittleDeen.H5" parent="TextAppearance.Material3.TitleMedium">
+        <item name="fontFamily">@font/berlin</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:textColor">@color/color_text_primary</item>
+    </style>
+
+    <style name="TextAppearance.LittleDeen.H6" parent="TextAppearance.Material3.TitleSmall">
+        <item name="fontFamily">@font/berlin</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:textColor">@color/color_text_primary</item>
+    </style>
+
+    <!-- ========================================== -->
+    <!-- Body Paragraphs (P1 to P7) - Inter Font    -->
+    <!-- ========================================== -->
+    <style name="TextAppearance.LittleDeen.P1" parent="TextAppearance.Material3.BodyLarge">
+        <item name="fontFamily">@font/inter_reg</item>
+        <item name="android:textSize">@dimen/_15ssp</item>
+        <item name="android:textColor">@color/color_text_primary</item>
+        <item name="android:lineSpacingExtra">@dimen/_3sdp</item>
+    </style>
+
+    <style name="TextAppearance.LittleDeen.P2" parent="TextAppearance.Material3.BodyLarge">
+        <item name="fontFamily">@font/inter_reg</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:textColor">@color/color_text_secondary</item>
+    </style>
+
+    <style name="TextAppearance.LittleDeen.P3" parent="TextAppearance.Material3.BodyMedium">
+        <item name="fontFamily">@font/inter_reg</item>
+        <item name="android:textSize">@dimen/_13ssp</item>
+        <item name="android:textColor">@color/color_text_primary</item>
+    </style>
+
+    <style name="TextAppearance.LittleDeen.P4" parent="TextAppearance.Material3.BodyMedium">
+        <item name="fontFamily">@font/inter_reg</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:textColor">@color/color_text_secondary</item>
+    </style>
+
+    <style name="TextAppearance.LittleDeen.P5" parent="TextAppearance.Material3.BodySmall">
+        <item name="fontFamily">@font/inter_reg</item>
+        <item name="android:textSize">@dimen/_11ssp</item>
+        <item name="android:textColor">@color/color_text_secondary</item>
+    </style>
+
+    <style name="TextAppearance.LittleDeen.P6" parent="TextAppearance.Material3.BodySmall">
+        <item name="fontFamily">@font/inter_reg</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:textColor">@color/color_text_tertiary</item>
+    </style>
+
+    <style name="TextAppearance.LittleDeen.P7" parent="TextAppearance.Material3.LabelSmall">
+        <item name="fontFamily">@font/inter_reg</item>
+        <item name="android:textSize">@dimen/_9ssp</item>
+        <item name="android:textColor">@color/color_text_tertiary</item>
+    </style>
+
+</resources>

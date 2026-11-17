@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg_app">
+
+    <!-- Top Action Bar -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/_14sdp"
+        android:paddingTop="@dimen/_12sdp"
+        android:paddingBottom="@dimen/_8sdp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btnClose"
+            android:layout_width="@dimen/_34sdp"
+            android:layout_height="@dimen/_34sdp"
+            app:cardBackgroundColor="@color/color_surface"
+            app:cardCornerRadius="@dimen/_17sdp"
+            app:cardElevation="@dimen/_1sdp"
+            app:strokeColor="@color/color_border"
+            app:strokeWidth="@dimen/_1sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/_8sdp"
+                android:src="@drawable/ic_check"
+                android:rotation="180"
+                app:tint="@color/color_text_primary" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tvHeaderTitle"
+            style="@style/TextAppearance.LittleDeen.H3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About Little Deen"
+            android:textColor="@color/color_primary"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Scrollable Content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerBar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/_14sdp"
+            android:paddingTop="@dimen/_8sdp"
+            android:paddingBottom="@dimen/_32sdp">
+
+            <!-- 1. HERO BRAND BANNER -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardHeroAbout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/_24sdp"
+                app:cardElevation="@dimen/_5sdp">
+
+                <FrameLayout
+                    android:id="@+id/flHeroAboutBg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_primary"
+                    android:padding="@dimen/_16sdp">
+
+                    <!-- Glass decorative blob -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_gravity="end|top"
+                        android:layout_marginTop="-40dp"
+                        android:layout_marginEnd="-30dp"
+                        app:cardBackgroundColor="#26FFFFFF"
+                        app:cardCornerRadius="60dp"
+                        app:cardElevation="0dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🕌✨"
+                            android:textSize="@dimen/_36ssp" />
+
+                        <TextView
+                            style="@style/TextAppearance.LittleDeen.H2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_6sdp"
+                            android:text="Little Deen"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_20ssp" />
+
+                        <TextView
+                            style="@style/TextAppearance.LittleDeen.P5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:text="A Safe, Halal Digital Garden for Muslim Kids 🌿"
+                            android:textColor="#E8FFF3"
+                            android:textSize="@dimen/_10ssp" />
+                    </LinearLayout>
+                </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 2. THE REAL PROBLEM CARD -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_14sdp"
+                app:cardBackgroundColor="#FFF3E0"
+                app:cardCornerRadius="@dimen/_20sdp"
+                app:cardElevation="@dimen/_2sdp"
+                app:strokeColor="#FFE0B2"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_14sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="⚠️"
+                            android:textSize="@dimen/_16ssp" />
+
+                        <TextView
+                            style="@style/TextAppearance.LittleDeen.H4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:text="Why We Built Little Deen"
+                            android:textColor="#E65100"
+                            android:textSize="@dimen/_13ssp" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/TextAppearance.LittleDeen.P5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:lineSpacingExtra="@dimen/_3sdp"
+                        android:text="Today's internet exposes young children to harmful content, unpredictable ads, inappropriate themes, and mindless scrolling. Parents are constantly anxious about what their kids are watching.\n\nLittle Deen is designed as an escape-proof, completely walled garden where screen time turns into meaningful learning time without any fear."
+                        android:textColor="#BF360C"
+                        android:textSize="@dimen/_10ssp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 3. WHAT KIDS LEARN HERE -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                app:cardBackgroundColor="@color/color_surface"
+                app:cardCornerRadius="@dimen/_20sdp"
+                app:cardElevation="@dimen/_2sdp"
+                app:strokeColor="@color/color_border"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_14sdp">
+
+                    <TextView
+                        style="@style/TextAppearance.LittleDeen.H4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🌟 What's Inside for Your Child?"
+                        android:textColor="@color/color_text_primary"
+                        android:textSize="@dimen/_13ssp" />
+
+                    <!-- Feature items -->
+                    <TextView
+                        style="@style/TextAppearance.LittleDeen.P5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:lineSpacingExtra="@dimen/_2sdp"
+                        android:text="🎬 Safe Halal Videos: Handpicked cartoons, moral videos &amp; nasheeds with external redirects blocked completely."
+                        android:textColor="@color/color_text_secondary"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <TextView
+                        style="@style/TextAppearance.LittleDeen.P5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:lineSpacingExtra="@dimen/_2sdp"
+                        android:text="📜 The 6 Kalimas: Authentic Arabic recitation, slow pronunciation guides, and translations in Urdu &amp; English."
+                        android:textColor="@color/color_text_secondary"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <TextView
+                        style="@style/TextAppearance.LittleDeen.P5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:lineSpacingExtra="@dimen/_2sdp"
+                        android:text="📖 Short Surahs: Surah Al-Fatiha and the 4 Quls with soothing audio playback."
+                        android:textColor="@color/color_text_secondary"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <TextView
+                        style="@style/TextAppearance.LittleDeen.P5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:lineSpacingExtra="@dimen/_2sdp"
+                        android:text="🤲 Daily Duas: Morning, sleeping, eating, and travel duas with interactive TTS pronunciation."
+                        android:textColor="@color/color_text_secondary"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <TextView
+                        style="@style/TextAppearance.LittleDeen.P5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:lineSpacingExtra="@dimen/_2sdp"
+                        android:text="📚 Moral &amp; Prophet Stories: Character-building stories teaching Sabr, Shukr, honesty, and kindness."
+                        android:textColor="@color/color_text_secondary"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <TextView
+                        style="@style/TextAppearance.LittleDeen.P5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:lineSpacingExtra="@dimen/_2sdp"
+                        android:text="🎨 Creative Hub: Drawing Pad, Neon Glow Art, Pixel Art, ABC &amp; 123 Tracing to learn motor and writing skills."
+                        android:textColor="@color/color_text_secondary"
+                        android:textSize="@dimen/_10ssp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 4. FEEDBACK & SUPPORT -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                app:cardBackgroundColor="@color/color_surface"
+                app:cardCornerRadius="@dimen/_20sdp"
+                app:cardElevation="@dimen/_2sdp"
+                app:strokeColor="@color/color_border"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_14sdp">
+
+                    <TextView
+                        style="@style/TextAppearance.LittleDeen.H4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="💌 Feedback &amp; Suggestions"
+                        android:textColor="@color/color_text_primary"
+                        android:textSize="@dimen/_13ssp" />
+
+                    <TextView
+                        style="@style/TextAppearance.LittleDeen.P5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:text="We built Little Deen with love for every Muslim home. Share your feedback with us:"
+                        android:textColor="@color/color_text_secondary"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <!-- Email 1 -->
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:id="@+id/btnEmailCodecraft"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingVertical="@dimen/_6sdp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="📧"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <TextView
+                            style="@style/TextAppearance.LittleDeen.H5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_weight="1"
+                            android:text="codecraftx@gmail.com"
+                            android:textColor="@color/color_primary"
+                            android:textSize="@dimen/_11ssp" />
+
+                        <TextView
+                            style="@style/TextAppearance.LittleDeen.P5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tap to email"
+                            android:textColor="@color/color_text_tertiary" />
+                    </LinearLayout>
+
+                    <!-- Email 2 -->
+                    <LinearLayout
+                        android:id="@+id/btnEmailCircleup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingVertical="@dimen/_6sdp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="📧"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <TextView
+                            style="@style/TextAppearance.LittleDeen.H5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_weight="1"
+                            android:text="circleup0719@gmail.com"
+                            android:textColor="@color/color_primary"
+                            android:textSize="@dimen/_11ssp" />
+
+                        <TextView
+                            style="@style/TextAppearance.LittleDeen.P5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tap to email"
+                            android:textColor="@color/color_text_tertiary" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 5. DEVELOPER SPOTLIGHT (SANA MEHBOOB) -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                app:cardBackgroundColor="@color/color_surface"
+                app:cardCornerRadius="@dimen/_20sdp"
+                app:cardElevation="@dimen/_2sdp"
+                app:strokeColor="@color/color_border"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_14sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="@dimen/_36sdp"
+                            android:layout_height="@dimen/_36sdp"
+                            app:cardBackgroundColor="#EDE7F6"
+                            app:cardCornerRadius="@dimen/_18sdp"
+                            app:cardElevation="0dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="👩‍💻"
+                                android:textSize="@dimen/_18ssp" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/TextAppearance.LittleDeen.H4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Meet the Developer"
+                                android:textColor="@color/color_text_primary"
+                                android:textSize="@dimen/_13ssp" />
+
+                            <TextView
+                                style="@style/TextAppearance.LittleDeen.P5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sana Mehboob "
+                                android:textColor="@color/color_primary"
+                                android:textSize="@dimen/_9ssp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/TextAppearance.LittleDeen.P5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:lineSpacingExtra="@dimen/_3sdp"
+                        android:text="Passionate about creating useful Android applications, including smart utility tools and engaging, kid-friendly apps. Focused on building user-friendly experiences that make everyday tasks easier and learning more fun for children."
+                        android:textColor="@color/color_text_secondary"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <!-- Quote -->
+                    <TextView
+                        style="@style/TextAppearance.LittleDeen.H5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:text="💜 Passionate About Innovation, Apps &amp; Creativity."
+                        android:textColor="#7E57C2"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:background="@color/color_border" />
+
+                    <!-- Quick Links Grid -->
+                    <!-- YouTube -->
+                    <LinearLayout
+                        android:id="@+id/btnLinkYoutube"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingVertical="@dimen/_6sdp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="▶️"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <TextView
+                            style="@style/TextAppearance.LittleDeen.H5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_weight="1"
+                            android:text="YouTube: @sanamehboob19"
+                            android:textColor="#D32F2F"
+                            android:textSize="@dimen/_11ssp" />
+
+                        <TextView
+                            style="@style/TextAppearance.LittleDeen.H3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="›"
+                            android:textColor="@color/color_text_tertiary" />
+                    </LinearLayout>
+
+                    <!-- Portfolio -->
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:id="@+id/btnLinkPortfolio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingVertical="@dimen/_6sdp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🌐"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <TextView
+                            style="@style/TextAppearance.LittleDeen.H5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_weight="1"
+                            android:text="Portfolio: sanamehboob19.github.io"
+                            android:textColor="@color/color_primary"
+                            android:textSize="@dimen/_11ssp" />
+
+                        <TextView
+                            style="@style/TextAppearance.LittleDeen.H3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="›"
+                            android:textColor="@color/color_text_tertiary" />
+                    </LinearLayout>
+
+                    <!-- LinkedIn -->
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:id="@+id/btnLinkLinkedIn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingVertical="@dimen/_6sdp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="💼"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <TextView
+                            style="@style/TextAppearance.LittleDeen.H5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_weight="1"
+                            android:text="LinkedIn: linkedin.com/in/sanamehboob19"
+                            android:textColor="#0277BD"
+                            android:textSize="@dimen/_11ssp" />
+
+                        <TextView
+                            style="@style/TextAppearance.LittleDeen.H3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="›"
+                            android:textColor="@color/color_text_tertiary" />
+                    </LinearLayout>
+
+                    <!-- GitHub -->
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:id="@+id/btnLinkGitHub"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingVertical="@dimen/_6sdp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🐙"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <TextView
+                            style="@style/TextAppearance.LittleDeen.H5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_weight="1"
+                            android:text="GitHub: github.com/sanamehboob19"
+                            android:textColor="@color/color_text_primary"
+                            android:textSize="@dimen/_11ssp" />
+
+                        <TextView
+                            style="@style/TextAppearance.LittleDeen.H3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="›"
+                            android:textColor="@color/color_text_tertiary" />
+                    </LinearLayout>
+
+                    <!-- WhatsApp Contact -->
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:id="@+id/btnLinkWhatsApp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingVertical="@dimen/_6sdp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="💬"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <TextView
+                            style="@style/TextAppearance.LittleDeen.H5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_weight="1"
+                            android:text="WhatsApp: +92 300 8884224"
+                            android:textColor="#2E7D32"
+                            android:textSize="@dimen/_11ssp" />
+
+                        <TextView
+                            style="@style/TextAppearance.LittleDeen.H3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="›"
+                            android:textColor="@color/color_text_tertiary" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- App Version Footnote -->
+            <TextView
+                android:id="@+id/tvAboutVersion"
+                style="@style/TextAppearance.LittleDeen.P5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:gravity="center"
+                android:text="Little Deen App • Version 1.0 • Made with ❤️ for Muslim Families"
+                android:textColor="@color/color_text_tertiary"
+                android:textSize="@dimen/_9ssp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

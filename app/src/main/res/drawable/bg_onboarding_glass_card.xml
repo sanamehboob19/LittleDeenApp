@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Luminous frosted white & soft lavender-glass gradient -->
+    <gradient
+        android:angle="270"
+        android:startColor="#E6FFFFFF"
+        android:centerColor="#D9F5F0FF"
+        android:endColor="#CCE8E0FA" />
+
+    <corners android:radius="@dimen/_20sdp" />
+
+    <!-- Crisp white rim stroke for premium glass elevation -->
+    <stroke
+        android:width="@dimen/_1sdp"
+        android:color="#FFFFFFFF" />
+</shape>
