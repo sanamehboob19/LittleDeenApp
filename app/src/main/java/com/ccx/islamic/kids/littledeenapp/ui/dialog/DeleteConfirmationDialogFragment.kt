@@ -8,12 +8,12 @@ import android.graphics.drawable.ColorDrawable
 import android.view.Gravity
 import android.view.ViewGroup
 import com.ccx.islamic.kids.littledeenapp.data.ThemeManager
-
 import com.ccx.islamic.kids.littledeenapp.databinding.DialogDeleteConfirmationBinding
 import com.ccx.islamic.kids.littledeenapp.extension.setOnSafeClickListener
 import com.ccx.islamic.kids.littledeenapp.ui.base.BaseDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
+
 
 @AndroidEntryPoint
 class DeleteConfirmationDialogFragment : BaseDialogFragment<DialogDeleteConfirmationBinding>(

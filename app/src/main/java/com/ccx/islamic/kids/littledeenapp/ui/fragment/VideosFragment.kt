@@ -96,12 +96,10 @@ class VideosFragment :
         }
 
         // Tab 2: History
-        // Tab 2: History
         binding.cardTabHistory.setOnSafeClickListener {
             startActivity(Intent(requireContext(), HistoryActivity::class.java))
         }
 
-        // Tab 3: Favorites
         // Tab 3: Favorites
         binding.cardTabFavorites.setOnSafeClickListener {
             startActivity(Intent(requireContext(), FavoritesActivity::class.java))

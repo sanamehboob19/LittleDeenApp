@@ -59,8 +59,6 @@ class VideoPlayerActivity : BaseActivity<ActivityVideoPlayerBinding>(
     private var currentSuggestedList: List<KidVideo> = emptyList()
 
     override fun setupViews() {
-        // 1. Pause background music so audio does not clash
-        musicManager.pauseMusic()
 
         // 2. Parse passed video data
         activeVideo = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -308,6 +306,12 @@ class VideoPlayerActivity : BaseActivity<ActivityVideoPlayerBinding>(
         // Resume background music if enabled by parent
         musicManager.startMusic()
         super.onDestroy()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // 🔇 Pause background music whenever this screen is active or re-opened
+        musicManager.pauseMusic()
     }
 
     companion object {

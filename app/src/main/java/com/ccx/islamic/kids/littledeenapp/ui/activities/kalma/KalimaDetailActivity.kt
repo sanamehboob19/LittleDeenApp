@@ -54,7 +54,6 @@ class KalimaDetailActivity : BaseActivity<ActivityKalimaDetailBinding>(
     private var isAudioPlaying = false
 
     override fun setupViews() {
-        musicManager.pauseMusic()
 
         kalimasList = KalimaItem.getAllKalimas()
         val targetId = intent.getIntExtra(EXTRA_KALIMA_ID, 1)
@@ -227,6 +226,13 @@ class KalimaDetailActivity : BaseActivity<ActivityKalimaDetailBinding>(
         musicManager.startMusic()
         super.onDestroy()
     }
+
+    override fun onResume() {
+        super.onResume()
+        // 🔇 Pause background music whenever this screen is active or re-opened
+        musicManager.pauseMusic()
+    }
+
 
     companion object {
         const val EXTRA_KALIMA_ID = "extra_kalima_id"

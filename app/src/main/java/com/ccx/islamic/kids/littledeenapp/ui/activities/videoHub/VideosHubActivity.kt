@@ -1,35 +1,20 @@
 package com.ccx.islamic.kids.littledeenapp.ui.activities.videoHub
 
-import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.ccx.islamic.kids.littledeenapp.R
+
 import android.content.Intent
-import android.graphics.Color
-import androidx.core.content.ContextCompat
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ccx.islamic.kids.littledeenapp.data.ThemeManager
 import com.ccx.islamic.kids.littledeenapp.data.VideoCategoryChip
 import com.ccx.islamic.kids.littledeenapp.databinding.ActivityVideosHubBinding
 import com.ccx.islamic.kids.littledeenapp.extension.setOnSafeClickListener
-import com.ccx.islamic.kids.littledeenapp.extension.showToast
-import com.ccx.islamic.kids.littledeenapp.model.KidVideo
-import com.ccx.islamic.kids.littledeenapp.repo.VideoRepository
 import com.ccx.islamic.kids.littledeenapp.ui.activities.playlist.PlaylistsActivity
 import com.ccx.islamic.kids.littledeenapp.ui.activities.videoPlayer.CategoriesActivity
 import com.ccx.islamic.kids.littledeenapp.ui.activities.videoPlayer.FavoritesActivity
 import com.ccx.islamic.kids.littledeenapp.ui.activities.videoPlayer.HistoryActivity
 import com.ccx.islamic.kids.littledeenapp.ui.activities.videoPlayer.SearchActivity
-import com.ccx.islamic.kids.littledeenapp.ui.activities.videoPlayer.VideoPlayerActivity
-import com.ccx.islamic.kids.littledeenapp.ui.adapter.CategoryChipAdapter
 import com.ccx.islamic.kids.littledeenapp.ui.adapter.HubCategoryAdapter
-import com.ccx.islamic.kids.littledeenapp.ui.adapter.VideoAdapter
 import com.ccx.islamic.kids.littledeenapp.ui.base.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 

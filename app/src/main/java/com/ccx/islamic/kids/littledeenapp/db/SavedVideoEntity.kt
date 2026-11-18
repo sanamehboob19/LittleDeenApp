@@ -13,5 +13,5 @@ data class SavedVideoEntity(
     val durationText: String = "",
     val categoryId: String = "",
     val isFavorite: Boolean = false,
-    val lastWatchedAt: Long = 0L // 0 means not in history, timestamp means watched
+    val lastWatchedAt: Long = 0L
 )

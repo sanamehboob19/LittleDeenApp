@@ -12,6 +12,6 @@ data class PlaylistEntity(
     @PrimaryKey(autoGenerate = true) val playlistId: Long = 0L,
     val playlistName: String,
     val playlistEmoji: String = "📂",
-    val coverImageUri: String? = null, // 👈 Stores custom image uri from camera/gallery
+    val coverImageUri: String? = null,
     val createdAt: Long = System.currentTimeMillis()
 )

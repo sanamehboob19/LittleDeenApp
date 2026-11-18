@@ -54,8 +54,6 @@ class SurahDetailActivity : BaseActivity<ActivitySurahDetailBinding>(
     private var isAudioPrepared = false
 
     override fun setupViews() {
-        // Pause background music so Quran recitation is clear
-        musicManager.pauseMusic()
 
         surahsList = SurahItem.getAllSurahs()
         val targetId = intent.getIntExtra(EXTRA_SURAH_ID, 1)
@@ -284,6 +282,13 @@ class SurahDetailActivity : BaseActivity<ActivitySurahDetailBinding>(
         musicManager.startMusic()
         super.onDestroy()
     }
+
+    override fun onResume() {
+        super.onResume()
+        // 🔇 Pause background music whenever this screen is active or re-opened
+        musicManager.pauseMusic()
+    }
+
 
     companion object {
         const val EXTRA_SURAH_ID = "extra_surah_id"

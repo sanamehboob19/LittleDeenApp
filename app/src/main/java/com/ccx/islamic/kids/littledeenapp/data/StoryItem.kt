@@ -15,7 +15,7 @@ data class StoryItem(
     val content: String,
     val moralLesson: String,
     val islamicTeaching: String,
-    @DrawableRes val imageRes: Int = R.drawable.avatar_boy_1 // 👈 Default local illustration
+    @DrawableRes val imageRes: Int = R.drawable.avatar_boy_1 // Default local illustration
 ) : Parcelable {
     companion object {
         fun getDefaultStories(): List<StoryItem> {

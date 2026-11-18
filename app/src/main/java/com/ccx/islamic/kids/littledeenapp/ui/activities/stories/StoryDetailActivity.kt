@@ -18,6 +18,7 @@ import com.ccx.islamic.kids.littledeenapp.databinding.FragmentStoryPageBinding
 import com.ccx.islamic.kids.littledeenapp.extension.setOnSafeClickListener
 import com.ccx.islamic.kids.littledeenapp.extension.showToast
 import com.ccx.islamic.kids.littledeenapp.ui.base.BaseActivity
+import com.ccx.islamic.kids.littledeenapp.util.MusicManager
 import com.ccx.islamic.kids.littledeenapp.util.VoiceAssistant
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -31,6 +32,9 @@ class StoryDetailActivity : BaseActivity<ActivityStoryDetailBinding>(
     lateinit var themeManager: ThemeManager
 
     private lateinit var storiesList: List<StoryItem>
+
+    @Inject
+    lateinit var musicManager: MusicManager
 
     override fun setupViews() {
         storiesList = StoryItem.getDefaultStories()
@@ -93,6 +97,19 @@ class StoryDetailActivity : BaseActivity<ActivityStoryDetailBinding>(
                 finish()
             }
         }
+    }
+
+
+    override fun onResume() {
+        super.onResume()
+        // 🔇 Pause background music whenever this screen is active or re-opened
+        musicManager.pauseMusic()
+    }
+
+    override fun onDestroy() {
+        // 🔊 Resume background music when the user leaves this screen
+        musicManager.startMusic()
+        super.onDestroy()
     }
 
     companion object {

@@ -12,6 +12,7 @@ import com.ccx.islamic.kids.littledeenapp.databinding.ActivitySurahsBinding
 import com.ccx.islamic.kids.littledeenapp.extension.setOnSafeClickListener
 import com.ccx.islamic.kids.littledeenapp.ui.adapter.SurahListAdapter
 import com.ccx.islamic.kids.littledeenapp.ui.base.BaseActivity
+import com.ccx.islamic.kids.littledeenapp.util.MusicManager
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -23,6 +24,9 @@ class SurahsActivity :
     lateinit var themeManager: ThemeManager
 
     private lateinit var surahAdapter: SurahListAdapter
+
+    @Inject
+    lateinit var musicManager: MusicManager
 
     override fun setupViews() {
         applyThemeStyling()
@@ -64,4 +68,18 @@ class SurahsActivity :
     private fun setupClickListeners() {
         binding.btnBack.setOnSafeClickListener { finish() }
     }
+
+
+    override fun onResume() {
+        super.onResume()
+        // 🔇 Pause background music whenever this screen is active or re-opened
+        musicManager.pauseMusic()
+    }
+
+    override fun onDestroy() {
+        // 🔊 Resume background music when the user leaves this screen
+        musicManager.startMusic()
+        super.onDestroy()
+    }
+
 }

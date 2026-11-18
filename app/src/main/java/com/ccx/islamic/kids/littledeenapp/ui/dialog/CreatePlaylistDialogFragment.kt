@@ -11,12 +11,12 @@ import com.ccx.islamic.kids.littledeenapp.data.ThemeManager
 import com.ccx.islamic.kids.littledeenapp.databinding.DialogCreatePlaylistBinding
 import com.ccx.islamic.kids.littledeenapp.db.PlaylistEntity
 import com.ccx.islamic.kids.littledeenapp.extension.setOnSafeClickListener
-import com.ccx.islamic.kids.littledeenapp.extension.showToast
 import com.ccx.islamic.kids.littledeenapp.repo.VideoRepository
 import com.ccx.islamic.kids.littledeenapp.ui.base.BaseDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+
 
 @AndroidEntryPoint
 class CreatePlaylistDialogFragment : BaseDialogFragment<DialogCreatePlaylistBinding>(

@@ -14,13 +14,13 @@ import androidx.room.RoomDatabase
         PlaylistVideoCrossRef::class,
         CachedVideoEntity::class,
         StreakEntity::class ,
-        TasbeehEntity::class// 👈 Added here
+        TasbeehEntity::class
     ],
-    version = 5, // Bumped version
+    version = 5,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
     abstract fun videoDao(): VideoDao
-    abstract fun streakDao(): StreakDao // 👈 Added here
+    abstract fun streakDao(): StreakDao
     abstract fun tasbeehDao(): TasbeehDao
 }

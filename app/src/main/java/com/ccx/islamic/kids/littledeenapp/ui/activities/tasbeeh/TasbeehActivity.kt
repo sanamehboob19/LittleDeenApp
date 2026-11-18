@@ -17,6 +17,7 @@ import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
 import com.ccx.islamic.kids.littledeenapp.extension.showToast
 import com.ccx.islamic.kids.littledeenapp.ui.adapter.TasbeehChipAdapter
+import com.ccx.islamic.kids.littledeenapp.util.MusicManager
 import com.ccx.islamic.kids.littledeenapp.util.PreferenceHelper
 import com.ccx.islamic.kids.littledeenapp.util.VoiceAssistant
 import kotlinx.coroutines.delay
@@ -41,6 +42,8 @@ class TasbeehActivity : BaseActivity<ActivityTasbeehBinding>(
 
     @Inject
     lateinit var preferenceHelper: PreferenceHelper
+    @Inject
+    lateinit var musicManager: MusicManager
 
     private lateinit var chipAdapter: TasbeehChipAdapter
     private var currentActiveTasbeeh: TasbeehEntity? = null
@@ -177,6 +180,19 @@ class TasbeehActivity : BaseActivity<ActivityTasbeehBinding>(
         voiceAssistant.stop()
         super.onPause()
     }
+
+    override fun onResume() {
+        super.onResume()
+        // 🔇 Pause background music whenever this screen is active or re-opened
+        musicManager.pauseMusic()
+    }
+
+    override fun onDestroy() {
+        // 🔊 Resume background music when the user leaves this screen
+        musicManager.startMusic()
+        super.onDestroy()
+    }
+
 }
 
 

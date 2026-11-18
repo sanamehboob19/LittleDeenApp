@@ -19,6 +19,7 @@ import com.ccx.islamic.kids.littledeenapp.extension.setOnSafeClickListener
 import com.ccx.islamic.kids.littledeenapp.data.DuaItem
 import com.ccx.islamic.kids.littledeenapp.ui.base.BaseActivity
 import com.ccx.islamic.kids.littledeenapp.ui.fragment.DuaPageFragment
+import com.ccx.islamic.kids.littledeenapp.util.MusicManager
 import com.ccx.islamic.kids.littledeenapp.util.VoiceAssistant
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
@@ -41,6 +42,8 @@ class DuaDetailActivity : BaseActivity<ActivityDuaDetailBinding>(
 
     private var currentNarrationJob: Job? = null
     private lateinit var duaList: List<DuaItem>
+    @Inject
+    lateinit var musicManager: MusicManager
 
     override fun setupViews() {
         // 🎯 Read the passed shuffled list (or fallback to default if not provided)
@@ -97,11 +100,23 @@ class DuaDetailActivity : BaseActivity<ActivityDuaDetailBinding>(
     override fun onDestroy() {
         currentNarrationJob?.cancel()
         voiceAssistant.stop()
+        musicManager.startMusic()
         super.onDestroy()
     }
+
+
 
     companion object {
         const val EXTRA_START_INDEX = "extra_start_index"
         const val EXTRA_DUA_LIST = "extra_dua_list" // 👈 Added constant
     }
+
+
+    override fun onResume() {
+        super.onResume()
+        // 🔇 Pause background music whenever this screen is active or re-opened
+        musicManager.pauseMusic()
+    }
+
+
 }

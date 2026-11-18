@@ -12,6 +12,7 @@ import com.ccx.islamic.kids.littledeenapp.databinding.ActivityKalimasBinding
 import com.ccx.islamic.kids.littledeenapp.extension.setOnSafeClickListener
 import com.ccx.islamic.kids.littledeenapp.ui.adapter.KalimaListAdapter
 import com.ccx.islamic.kids.littledeenapp.ui.base.BaseActivity
+import com.ccx.islamic.kids.littledeenapp.util.MusicManager
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -24,6 +25,8 @@ class KalimasActivity : BaseActivity<ActivityKalimasBinding>(
     lateinit var themeManager: ThemeManager
 
     private lateinit var kalimaAdapter: KalimaListAdapter
+    @Inject
+    lateinit var musicManager: MusicManager
 
     override fun setupViews() {
         applyThemeStyling() // Use the consistent method name
@@ -79,4 +82,18 @@ class KalimasActivity : BaseActivity<ActivityKalimasBinding>(
     private fun setupClickListeners() {
         binding.btnBack.setOnSafeClickListener { finish() }
     }
+
+    override fun onResume() {
+        super.onResume()
+        // 🔇 Pause background music whenever this screen is active or re-opened
+        musicManager.pauseMusic()
+    }
+
+    override fun onDestroy() {
+        // 🔊 Resume background music when the user leaves this screen
+        musicManager.startMusic()
+        super.onDestroy()
+    }
+
+
 }

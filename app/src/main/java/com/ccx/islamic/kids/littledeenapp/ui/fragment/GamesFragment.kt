@@ -4,7 +4,6 @@ package com.ccx.islamic.kids.littledeenapp.ui.fragment
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
-import android.widget.Toast
 import androidx.core.graphics.ColorUtils
 import com.ccx.islamic.kids.littledeenapp.data.ThemeManager
 import com.ccx.islamic.kids.littledeenapp.databinding.FragmentGamesBinding
@@ -15,10 +14,11 @@ import com.ccx.islamic.kids.littledeenapp.ui.activities.pixel_art.PixelSelection
 import com.ccx.islamic.kids.littledeenapp.ui.activities.tracing.AlphabetSelectionActivity
 import com.ccx.islamic.kids.littledeenapp.ui.activities.tracing.NumberSelectionActivity
 import com.ccx.islamic.kids.littledeenapp.ui.activities.tracing.ShapeSelectionActivity
-import com.ccx.islamic.kids.littledeenapp.ui.activities.tracing.UrduSelectionActivity
 import com.ccx.islamic.kids.littledeenapp.ui.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
+
+
 
 @AndroidEntryPoint
 class GamesFragment : BaseFragment<FragmentGamesBinding>(
@@ -59,7 +59,6 @@ class GamesFragment : BaseFragment<FragmentGamesBinding>(
 
     private fun setupClickListeners() {
         // Pixel Art
-        // Pixel Art
         binding.cardPixelArt.setOnSafeClickListener {
             val intent = Intent(requireContext(), PixelSelectionActivity::class.java)
             startActivity(intent)
@@ -87,7 +86,6 @@ class GamesFragment : BaseFragment<FragmentGamesBinding>(
             startActivity(intent)
         }
 
-        // Neon Pad
         // Neon Pad
         binding.cardNeonPad.setOnSafeClickListener {
             startActivity(Intent(requireContext(), NeonPadActivity::class.java))
