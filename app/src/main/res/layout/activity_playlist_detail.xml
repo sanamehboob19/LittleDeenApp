@@ -66,8 +66,7 @@
                             android:layout_height="match_parent"
                             android:contentDescription="Back"
                             android:padding="@dimen/_9sdp"
-                            android:rotation="180"
-                            android:src="@drawable/ic_check"
+                            android:src="@drawable/ic_back_arrow"
                             app:tint="@color/white" />
                     </com.google.android.material.card.MaterialCardView>
 
